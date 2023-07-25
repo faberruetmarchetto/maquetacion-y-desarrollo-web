@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Clase 1 - Desarrollo web</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="../output.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body class="text-stone-800" style="font-family: 'Inter', sans-serif;">
+        <header class="flex flex-row justify-between p-2 border-b
+            border-stone-400"
+        >
+            <div class="flex flex-col gap-1 bg-white opacity-90">
+                <span style="font-family: 'source code pro', monospace;"
+                    class="text-indigo-600 text-xl md:text-2xl" 
+                >
+                    .maquetacion-y-desarrollo-web{}
+                </span>
+                <span class="font-normal">
+                    &rsaquo; <span class="font-semibold">Clase 1</span>
+                </span>
+            </div>
+        </header>
+        <article class="flex flex-col bg-white w-full min-h-screen py-4 px-4 md:px-40 
+            gap-10 md:text-lg">
+            <section class="flex flex-col gap-2 bg-stone-50 p-2 rounded border 
+                border-stone-200">
+                <h2 class="text-2xl font-bold">
+                    &rsaquo; Indice de contenidos
+                </h2>
+                <ol class="list-inside list-decimal text-stone-600">
+                        <li>
+                            <a href="#repaso" 
+                                class=" hover:text-indigo-600"
+                            >
+                                Repaso de HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#elementos"
+                                class=" hover:text-indigo-600"
+                            >
+                                Elementos HTML
+                            </a>
+                        </li>
+                        <ol class="ml-5 list-inside list-decimal text-stone-600">
+                            <li>
+                                <a href="#elementos_anidados"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Elementos anidados
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#elementos_bloque"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Elementos de bloque y en linea 
+                                </a>
+                            </li>
+                        </ol>
+                        <li>
+                            <a href="#atributos"
+                                class=" hover:text-indigo-600"
+                            >
+                                Atributos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#anatomia"
+                                class=" hover:text-indigo-600"
+                            >
+                               Anatomia de un documento HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#elementos_comunes"
+                                class=" hover:text-indigo-600"
+                            >
+                                Elementos HTML mas comunes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#semanticos"
+                                class=" hover:text-indigo-600"
+                            >
+                                Tags HTML semanticos
+                            </a>
+                        </li>
+                </ol>
+            </section>
+            <section class="flex flex-col gap-2">
+                <h2 id="repaso" 
+                    class="text-2xl font-bold">
+                    1. Repaso de HTML 
+                </h2>
+                <p>
+                    HTML (HyperText Markup Language) es un lenguaje de marcado 
+                    que se utiliza para darle estructura a las páginas web. 
+                </p>
+                <p>
+                    HTML no es un lenguaje de programación, ya que no contiene 
+                    lógica, sino que está compuesto de hipertexto (texto y links).
+                </p>
+                <p>
+                    HTML consiste de una serie de elementos que se utilizan 
+                    para estructurar o “marcar” el contenido para que se 
+                    muestre o se comporte de determinada manera.
+                </p>
+                <p>
+                    Las etiquetas HTML son las que encierran el contenido 
+                    para que se comporten de cierta forma. Por ejemplo: 
+                    hacer que una porción de texto actúe como un enlace a 
+                    otra página (un link).
+                </p>
+            </section>
+            <section class="flex flex-col gap-2">
+                <h2 id="elementos" 
+                    class="text-2xl font-bold">
+                    2. Elementos HTML
+                </h2>
+                <p>
+                    Las principales partes de un elemento HTML son:
+                </p>
+                <ul class="list-inside list-disc">
+                    <li>
+                        La etiqueta de apertura: consiste en el nombre del 
+                        elemento, encerrado entre ‘<’ y >‘’. 
+                        Esta etiqueta de apertura marca dónde comienza el 
+                        elemento o comienza a tener efecto.
+                    </li>
+                    <li>
+                        El contenido: Este es el contenido del elemento.
+                    </li>
+                    <li>
+                        La etiqueta de cierre: Es lo mismo que la etiqueta de 
+                        apertura, excepto que incluye una barra diagonal 
+                        antes del nombre del elemento. 
+                        Esto indica dónde termina el elemento
+                    </li>
+                </ul>
+                <p>
+                    El elemento lo conforman la etiqueta de apertura, 
+                    seguida del contenido, seguido de la etiqueta de cierre.
+                </p>
+                <figure class="self-center flex flex-col">
+                    <img alt="Esquema cliente servidor"
+                        class="w-3/4 self-center"
+                        src="https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png"
+                    />
+                    <figcaption class="text-right">
+                        Fig. 1 - Elemento HTML.
+                    </figcaption>
+                </figure>
+                <p class="p-4 bg-indigo-100 text-indigo-700 rounded">
+                    No todos los elementos siguen el patrón de etiqueta de 
+                    apertura, contenido y etiqueta de cierre. 
+                    Algunos elementos consisten solo en una etiqueta única, 
+                    que se utiliza generalmente para insertar/incrustar algo en el 
+                    documento en el lugar donde se le quiere incluir. 
+                    Por ejemplo, el elemento 
+
+                    <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                        font-semibold rounded"
+                        style="font-family: 'Source Code Pro', monospace;">&lt;img&gt;</span>
+                    inserta una imagen en la página
+                </p>
+
+                <section class="flex flex-col gap-2">
+                    <h2 id="elementos_anidados" 
+                        class="text-xl font-bold">
+                        2.1. Elementos anidados 
+                    </h2>
+                    <p>
+                        Se pueden poner elementos dentro de otros elementos. 
+                        Esto se llama anidamiento.
+                    </p>
+                    Codigo:
+                    <pre><code class="language-html">&lt;p&gt;Mi gato es &lt;strong&gt;muy&lt;/strong&gt; gruñón.&lt;/p&gt;</code></pre>
+                    <div class="flex flex-col">
+                        Resultado:
+                        <p>Mi gato es <strong>muy</strong> gruñón.</p>
+                    </div>
+                    <p>
+                        En el ejemplo anterior, primero abrimos el elemento p, 
+                        luego abrimos el elemento strong. 
+                        Esto es un anidamiento correcto.
+                    </p>
+                    <p>
+                        El siguiente es un ejemplo de la forma incorrecta de anidar:
+                    </p>
+                    Codigo:
+                    <pre><code class="language-html">&lt;p&gt;Mi gato es &lt;strong&gt;muy gruñón.&lt;/p&gt;&lt;/strong&gt;</code></pre>
+                    <div class="flex flex-col">
+                        Resultado:
+                        <p>Mi gato es <strong>muy gruñón.</p></strong>
+                    </div>
+                </section>
+
+                <section class="flex flex-col gap-2">
+                    <h2 id="elementos_bloque" 
+                        class="text-xl font-bold">
+                        2.2 Elementos de bloque y elementos en línea
+                    </h2>
+                    <p>
+                        Hay dos categorías importantes de elementos en HTML — 
+                        Estos son los elementos de bloque y los elementos en línea.
+                    </p>
+                    <p>
+                        Los elementos de bloque forman un bloque visible en la 
+                        página. Aparecerán en una línea nueva después de 
+                        cualquier contenido anterior.
+                    </p>
+                    <p>
+                        Los elementos en línea están contenidos dentro de 
+                        elementos de bloque y delimitan solo pequeñas partes 
+                        del contenido del documento
+                    </p>
+                    <p>
+                        Considera el siguiente ejemplo:
+                    </p>
+                    <pre><code class="language-html">&lt;em&gt;primero&lt;/em&gt;&lt;em&gt;segundo&lt;/em&gt;&lt;em&gt;tercero&lt;/em&gt;
+&lt;p&gt;cuarto&lt;/p&gt;
+&lt;p&gt;quinto&lt;/p&gt;
+&lt;p&gt;sexto&lt;/p&gt;</code></pre>
+                    <div class="p-2">
+                        <em>primero</em><em>segundo</em><em>tercero</em>
+                        <p>cuarto</p>
+                        <p>quinto</p>
+                        <p>sexto</p>
+                    </div>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h2 id="atributos" 
+                        class="text-2xl font-bold">
+                        3. Atributos
+                    </h2>
+                    <p>
+                        Los elementos pueden tener atributos. 
+                        Los atributos contienen información extra sobre el 
+                        elemento, por ejemplo el atributo 
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700"
+                            >href</span>,
+                        para los tags 
+                        del tipo 
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700"
+                            >&lt;a&gt;</span>,
+                        tiene como valor la URL a la que debe 
+                        redireccionar el link.
+                    </p>
+                    <p>
+                        Por ejemplo, de esta forma se define un link que 
+                        redirecciona a google.com.
+                    </p>
+                    Codigo: 
+                    <pre><code class="language-html">&lt;a href="https://google.com"&gt;Link a Google&lt;a&gt;</code></pre>
+                    <div class="flex flex-col gap-2">
+                        Resultado: 
+                        <a href="https://google.com" class="text-indigo-600 hover:text-indigo-500">
+                            Link a Google
+                        <a>
+                    </div>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h2 id="anatomia" 
+                        class="text-2xl font-bold">
+                        4. Anatomia de un documento HTML
+                    </h2>
+                    <p>
+                        Los elementos HTML no son muy útiles por sí mismos. 
+                        Ahora veremos cómo combinar los elementos individuales 
+                        para formar una página HTML completa:
+                    </p>
+                    <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+	&lt;meta charset="utf-8" /&gt;
+	&lt;title&gt;Mi página de prueba&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+	&lt;p&gt;Esta es mi página&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;!DOCTYPE html&gt;</span>: 
+                        El elemento doctype. En sus inicios, cuando el HTML 
+                        llevaba poco tiempo (alrededor de 1991-1992), 
+                        los doctypes servían como enlaces al conjunto de reglas 
+                        que la página HTML debía seguir para que fuera considerado buen HTML.
+                        En la actualidad se ignora y se considera un legado 
+                        histórico que hay que incluir para que todo funcione correctamente. 
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;html&gt;&lt;/html&gt;</span>: 
+                        El elemento doctype. En sus inicios, cuando el HTML 
+                        llevaba poco tiempo (alrededor de 1991-1992), 
+                        los doctypes servían como enlaces al conjunto de reglas 
+                        que la página HTML debía seguir para que fuera considerado buen HTML.
+                        En la actualidad se ignora y se considera un legado 
+                        histórico que hay que incluir para que todo funcione correctamente. 
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;head&gt;&lt;/head&gt;</span>: 
+                        Este elemento actúa como contenedor para todos los 
+                        parámetros que quieras incluir en el documento HTML 
+                        que no serán visibles a los visitantes de la página. 
+                        Incluye cosas como palabras clave y la descripción 
+                        de la página que quieras mostrar en los resultados de búsqueda,
+                        así como la hoja de estilo para formatear nuestro contenido,
+                        declaraciones de codificación de caracteres y más. 
+                        Aprenderás más acerca de esto en el siguiente artículo de la serie.
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;meta charset="utf-8"&gt;</span>: 
+                        Este elemento establece que tu documento HTML usará 
+                        la codificación UTF-8, que incluye la gran mayoría de 
+                        caracteres de todos los idiomas humanos escritos. 
+                        En resumen: puede gestionar cualquier contenido textual 
+                        que pongas en tu documento. No hay razón para no 
+                        configurar este valor y te puede ayudar a evitar 
+                        problemas más adelante.
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;title&gt;&lt;/title&gt;</span>: 
+                        Este establece el título de la página, que es el título 
+                        que aparece en la pestaña del navegador en la que se 
+                        carga la página. El título de la página también se 
+                        utiliza para describir la página cuando se 
+                        marca como favorita.
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <span style="font-family: 'source code pro', monospace;"
+                            class="text-indigo-700" 
+                        >&lt;body&gt;&lt;/body&gt;</span>: 
+                        Contiene todo el contenido que quieres mostrar a los 
+                        usuarios cuando visitan tu página, ya sea texto, 
+                        imágenes, vídeos, juegos, pistas de audio reproducibles 
+                        o cualquier otra cosa.
+                    </p>
+                </section>
+            </section>
+            <section class="flex flex-col gap-2">
+                <h2 id="elementos_comunes" 
+                    class="text-2xl font-bold">
+                    5. Elementos HTML mas comunes
+                </h2>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;div&gt;</span>: 
+                    división o bloque dentro del contenido, el más común para componer elementos complejos
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;a&gt;</span>: 
+                    Para enlaces (hipervinculos) a una URL.
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;strong&gt;</span>: 
+                    Para poner el texto en negrita.
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;br&gt;</span>: 
+                    Para poner saltos de linea.
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;p&gt;</span>: 
+                    Para párrafos.
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;button&gt;</span>: 
+                    Boton
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;h1&gt;...&lt;h6&gt;</span>: 
+                    Para títulos dentro del contenido
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;img&gt;</span>: 
+                     Para añadir imágenes al documento
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;ol&gt;&lt;li&gt;</span>: 
+                    Las etiquetas 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;ol&gt</span>
+                    y 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;li&gt</span>
+                    nos sirven para crear listas, 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;ol&gt</span>
+                    para listas ordenadas y
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;ul&gt</span>
+                    para listas sin orden. 
+                    Dentro de las listas, los elementos se identifican con la etiqueta
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;li&gt</span>.
+                </p>
+                <p>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;input type="text"&gt;</span>: 
+                    Un campo de escritura de texto.
+                </p>
+            </section>
+
+            <section class="flex flex-col gap-2">
+                <h2 id="semanticos" 
+                    class="text-2xl font-bold">
+                    6. Tags HTML semanticos
+                </h2>
+                <p>
+                    Un elemento semántico describe claramente su significado 
+                    tanto para el navegador como para el desarrollador.
+                </p>
+                <p>
+                    Ejemplos de elementos no semánticos: 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;div&gt;</span>
+                        y 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;span&gt;</span>
+                    no dice nada sobre su contenido. 
+                </p>
+                <p>
+                    Ejemplos de elementos semánticos: 
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;form&gt;</span>,
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;table&gt;</span>
+                    y
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;article&gt;</span>
+                    define claramente su contenido.
+                </p>
+                <figure class="self-center flex flex-col">
+                    <img alt="Esquema cliente servidor"
+                        class="w-3/4 self-center"
+                        src="https://www.w3schools.com/html/img_sem_elements.gif"
+                    />
+                    <figcaption class="text-right">
+                        Fig. 2 - Elementos semanticos.
+                    </figcaption>
+                </figure>
+                <p>
+                    Muchos sitios web contienen código HTML como:
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;div id="nav"&gt;</span>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;div class="header"&gt;</span>
+                    <span style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;div id="footer"&gt;</span>
+                    para indicar navegación, encabezado y pie de página.
+                </p>
+                <p>
+                    En HTML hay algunos elementos semánticos que se pueden 
+                    usar para definir diferentes partes de una página web:
+                </p>
+                <ul class="list-inside list-disc">
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;article&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;aside&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;details&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;figcaption&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;figure&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;footer&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;header&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;main&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;mark&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;nav&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;section&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;summary&gt;</li>
+                    <li style="font-family: 'source code pro', monospace;"
+                        class="text-indigo-700"
+                        >&lt;time&gt;</li>
+                </ul>
+            </section>
+        </article>
+        <footer class="flex flex-row justify-between p-4 border-t
+            border-stone-400"
+        >
+            Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez, 
+        </footer>
+    </body>
+</html>
