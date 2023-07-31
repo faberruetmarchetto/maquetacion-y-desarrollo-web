@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Clase 2 - Maquetacion y Desarrollo Web</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="../output.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body class="text-stone-800" style="font-family: 'Inter', sans-serif;">
+        <header class="flex flex-row justify-between p-2 border-b
+            border-stone-400"
+        >
+            <div class="flex flex-col gap-1 bg-white opacity-90">
+                <span style="font-family: 'source code pro', monospace;"
+                    class="text-indigo-600 text-xl md:text-2xl" 
+                >
+                    .maquetacion-y-desarrollo-web{}
+                </span>
+                <span class="font-normal">
+                    &rsaquo; <span class="font-semibold">Clase 1</span>
+                </span>
+            </div>
+        </header>
+        <article class="flex flex-col bg-white w-full min-h-screen py-4 px-4 md:px-40 
+            gap-10 md:text-lg">
+            <section class="flex flex-col gap-2 bg-stone-50 p-2 rounded border 
+                border-stone-200">
+                <h2 class="text-2xl font-bold">
+                    &rsaquo; Indice de contenidos
+                </h2>
+                <ol class="list-inside list-decimal text-stone-600">
+                        <li>
+                            <a href="#repaso" 
+                                class=" hover:text-indigo-600"
+                            >
+                                Repaso de HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#elementos"
+                                class=" hover:text-indigo-600"
+                            >
+                                Elementos HTML
+                            </a>
+                        </li>
+                </ol>
+            </section>
+            <section class="flex flex-col gap-2">
+                <h2 id="introduccion" 
+                    class="text-2xl font-bold">
+                    1. Introduccion 
+                </h2>
+                <p>
+                    En este curso se detallarán los fundamentos de CSS en 
+                    fragmentos sencillos y fáciles de comprender. A lo 
+                    largo de los próximos módulos, aprenderá cómo funcionan 
+                    los aspectos fundamentales de CSS y cómo utilizarlos 
+                    eficazmente en sus proyectos.
+                </p>
+                <p>
+                    ¿Qué es CSS?
+                    significa hojas de estilo en cascada (Cascading Style Sheets)
+                    describe cómo se deben mostrar los elementos HTML en la pantalla
+                    Puede controlar el diseño de varias páginas web a la vez
+                    Las hojas de estilo externas se almacenan en archivos CSS.
+                </p>
+                <p>
+                    ¿Como le decimos al HTML que archivo CSS tiene que usar? Tenemos 
+                    que agregar lo siguiente al elemento head.
+                </p>
+                <pre><code class="language-html">&lt;link rel="stylesheet" src="styles.css" /&gt;</code></pre>
+                <p>
+                    En este caso styles.css es el archivo de css que contendra
+                    todos los estilos. Podemos utilizar varios archivos, pero 
+                    en este ejemplo utilicemos solo uno.
+                </p>
+            </section>
+            <section class="flex flex-col gap-2">
+                <h2 id="introduccion" 
+                    class="text-2xl font-bold">
+                    2. Modelo de caja (Box model) 
+                </h2>
+                <p>
+                    Todo lo que muestra CSS es una caja.
+                    Por lo tanto, comprender cómo funciona el modelo de caja 
+                    CSS es una base fundamental de CSS.
+                </p>
+                <p>
+                    Digamos que tienes este fragmento de HTML:
+                </p>
+<pre><code class="language-html">&lt;p&gt;
+    Soy un parrafo con algunas palabras.
+&lt;/p&gt;</code></pre>
+                <p>
+                    Luego escribiendo este CSS para el parrafo anterior:
+                </p>
+<pre><code class="language-css">p {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    border: 1px solid;
+}</code></pre>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="WNRemxN" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                  <span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/WNRemxN">
+                  Untitled</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <p>
+                    El contenido se sale de su elemento y tendría 142px de ancho, 
+                    en lugar de 100px. 
+                </p>
+                <p>
+                    ¿Porqué sucede eso?  142 = 100 de ancho 
+                    + 40 (padding izq + der) + 2 (border izq + der)
+                    El modelo de caja es una base fundamental de CSS y 
+                    comprender cómo funciona, cómo se ve afectado por otros 
+                    aspectos de CSS y, lo que es más importante, cómo puedes 
+                    controlarlo te ayudará a escribir un CSS más predecible.
+                </p>
+                <section class="flex flex-col gap-2">
+                    <h3 id="introduccion" 
+                        class="text-xl font-bold">
+                        2.1 Contenido y tamaño 
+                    </h3>
+                    <p>
+                        Las cajas tienen un comportamiento diferente 
+                        según su display, sus dimensiones establecidas y 
+                        el contenido que vive dentro de ellas. Este 
+                        contenido podría ser incluso más cajas, generadas 
+                        por elementos secundarios, o por contenido de texto 
+                        sin formato. De cualquier manera, este contenido 
+                        afectará la forma predeterminada del tamaño de la caja.
+                    </p>
+                    <p>
+                        Puedes controlar esto mediante el tamaño extrínseco, o 
+                        puedes seguir permitiendo que el navegador tome 
+                        decisiones por ti en función del tamaño del contenido, utilizando 
+                        el tamaño intrínseco.
+                    </p>
+                    <p>
+                        En una caja con dimensiones fijas y un borde grueso. La 
+                        caja tiene un ancho, por lo que tiene un tamaño 
+                        extrínseco, el cual controla el tamaño de su contenido hijo. 
+                        Sin embargo, el problema con esto es su contenido es 
+                        demasiado grande para la caja, por lo que se desborda 
+                        fuera del borde de la caja del elemento padre.
+                    </p>
+                    <p>
+                        Una forma de evitar este desbordamiento es permitir 
+                        que la caja tenga un tamaño intrínseco ya sea removiendo 
+                        el tamaño del ancho o, en este caso, estableciendo 
+                        el width en min-content. El min-content le dice a la caja 
+                        que sea tan ancha como el ancho mínimo intrínseco de su contenido.
+                    </p>
+                    <p>
+                        Esto permite que la caja se ajuste perfectamente al texto..
+                    </p>
+<pre><code class="language-css">p {
+    width: min-content;
+    height: min-content;
+    padding: 20px;
+    border: 1px solid;
+}</code></pre>
+                    <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYQvWdd" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                      <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/vYQvWdd">
+                      Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</a>)
+                      on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h3 id="introduccion" 
+                        class="text-xl font-bold">
+                        2.2 Las areas del modelo caja 
+                    </h3>
+                    <p>
+                        Las cajas se componen de áreas de modelo de caja 
+                        distintas que realizan un trabajo específico.
+                    </p>
+                    <figure class="self-center flex flex-col">
+                        <img alt="Box model"
+                            class="w-3/4 self-center"
+                            src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg"
+                        />
+                        <figcaption class="text-right">
+                            Fig. 1 - Box model. 
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Inicias con la caja de contenido, que es el área en la 
+                        que reside el contenido. Como aprendiste antes: este 
+                        contenido puede controlar el tamaño de su elemento 
+                        principal, por lo que suele ser el área de tamaño 
+                        más variable.
+                    </p>
+                    <p>
+                        La caja de padding (relleno) rodea la caja de 
+                        contenido y es el espacio creado por la propiedad 
+                        de padding. Debido a que el padding está dentro de la 
+                        caja, el fondo de la caja será visible en el espacio que crea.
+                    </p>
+                    <p>
+                        La caja de borde rodea la caja de padding y su espacio 
+                        está ocupado por el valor del border. 
+                        La caja de borde son los límites de su caja y el 
+                        filo del borde es el límite de lo que puedes 
+                        ver visualmente. La propiedad de border se usa para 
+                        enmarcar visualmente un elemento.
+                    </p>
+                    <p>
+                        El área final, la caja de margen, es el 
+                        espacio alrededor de tu caja, definida por la regla de 
+                        margin. Propiedades como el outline y box-shadow 
+                        ocupan este espacio porque están pintadas por 
+                        encima de los elementos, por lo que no afectan el 
+                        tamaño de nuestra caja.
+                    </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h3 id="introduccion" 
+                        class="text-xl font-bold">
+                        2.3 Una analogia util 
+                    </h3>
+                    <p>
+                        El modelo de caja es complejo de entender, 
+                        así que recapitulemos lo que has aprendido con una analogía.
+                    </p>
+                    <figure class="self-center flex flex-col">
+                        <img alt="Analogia"
+                            class="w-3/4 self-center"
+                            src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg?auto=format&w=845"
+                        />
+                        <figcaption class="text-right">
+                            Fig. 2 - Analogia del box model. 
+                        </figcaption>
+                    </figure>
+                    <p>
+                        En este diagrama, tienes tres fotos con marcos, 
+                        montados en una pared, uno al lado del otro. 
+                        El diagrama tiene etiquetas que asocian elementos 
+                        del marco con el modelo de caja.
+                    </p>
+                    <p class="font-bold">
+                        Para descomponer esta analogía:
+                    </p>
+                    <p>
+                        La caja de contenido es la obra de arte.<br>
+                        La caja de padding es el blanco mate, entre el marco y la obra de arte.<br>
+                        La caja de borde es el marco, que proporciona un borde literal para la obra de arte.<br>
+                        La caja de margen es el espacio entre cada cuadro.<br>
+                        La sombra ocupa el mismo espacio que la caja de margen.
+                    </p>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h2 id="selectores" 
+                        class="text-2xl font-bold">
+                        3. Selectores 
+                    </h2>
+                    <p>
+                        Para aplicar CSS a un elemento es necesario seleccionarlo.
+                        Imaginemos que queremos que el primer párrafo de un 
+                        artículo sea un texto de tamaño grande y color rojo.
+                    </p>
+<pre><code class="language-html">&lt;article&gt;
+    &lt;p&gt;Esta parte es mas grande y de color rojo.&lt;/p&gt;
+    &lt;p&gt;Esta parte tiene tamaño normal y el color por defecto.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+                    <p>
+                        Utilizamos un selector CSS para seleccionar ese 
+                        elemento específico y aplicar reglas de CSS:
+                    </p>
+<pre><code class="language-css">article p:first-of-type {
+    color: red;
+    font-size: 1.5em;
+}</code></pre>
+                <section class="flex flex-col gap-2">
+                    <h3 id="introduccion" 
+                        class="text-xl font-bold">
+                        3.1 Partes de una regla CSS
+                    </h3>
+                    <p>
+                        Una regla CSS es un bloque de código, que 
+                        contiene uno o más selectores y una o más declaraciones.
+                    </p>
+
+                    <figure class="self-center flex flex-col">
+                        <img alt="Partes de una regla CSS"
+                            class="w-3/4 self-center"
+                            src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg"
+                        />
+                        <figcaption class="text-right">
+                            Fig. 3 - Partes de una regla CSS. 
+                        </figcaption>
+                    </figure>
+                    <p>
+                        En esta regla CSS, el selector es 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">.my-css-rule</span>
+                        el 
+                        cual selecciona todos los elementos con la clase 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">my-css-rule</span>. 
+                        Hay 3 declaraciones dentro de las llaves 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">{ }</span>. 
+                        Una declaración está compuesta por una propiedad 
+                        y un valor que aplica estilos a los elementos hallados 
+                        por el selector. Una regla CSS puede tener tantas 
+                        declaraciones y selectores como se desee.
+                    </p>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h3 id="introduccion" 
+                        class="text-xl font-bold">
+                        3.2 Selectores simples 
+                    </h3>
+                    <p>
+                        <strong>Selector universal</strong>: selecciona todos los elementos.
+                    </p>
+<pre><code class="language-css">* {
+ color: blue;
+}</code></pre>
+                    <p>
+                        Esta regla hace que cada elemento HTML de la página 
+                        tenga texto color azul.
+                    </p>
+                    <p>
+                        <strong>Selector por tipos</strong>: selecciona un elemento HTML directamente.
+                    </p>
+<pre><code class="language-css">section {
+    padding: 2em;
+}</code></pre>
+                    <p>
+                        Esta regla hace que todos los elementos 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">&lt;section&gt;</span>. 
+                        tengan un 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">padding</span>. 
+                        de 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">2em</span>. 
+                        en todas las direcciones.
+                    </p>
+                    <p>
+                        <strong>Selector por clases</strong>: Un elemento HTML puede tener 
+                        una o más clases aplicadas en el atributo class. 
+                        El selector de clases selecciona cualquier elemento 
+                        que tenga una clase en particular aplicada.
+                    </p>
+<pre><code class="language-html">&lt;div class="my-class"&gt;&lt;/div&gt;
+&lt;button class="my-class"&gt;&lt;/button&gt;
+&lt;p class="my-class"&gt;&lt;/p&gt;</code></pre>
+<pre><code class="language-css">.my-class {
+ color: red;
+}</code></pre>
+                    <p>
+                        Todos los elementos que tengan aplicada la clase 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">my-class</span> 
+                        tendran texto de color rojo. En 
+                        este caso son los elementos 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">div</span>,
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">button</span> y 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">p</span> 
+                    </p>
+                    <p>
+                        A pesar de tener otras clases aplicadas, el siguiente 
+                        elemento también tendrá aplicada la clase 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">my-class</span>.
+                    </p>
+<pre><code class="language-html">&lt;div class="my-class another-class some-other-class"&gt;&lt;/div&gt;</code></pre>
+                    <p>
+                        <strong>Selector por ID</strong>: Si un elemento HTML 
+                        tiene un atributo id con un cierto 
+                        valor, este deberia ser el unico elemento con dicho 
+                        valor. Por ejemplo, si tenemos un div con 
+                        id=”contenedor”, entonces el unico elemento con 
+                        id=”contenedor” es ese mismo elemento.
+                    </p>
+                    <pre><code class="language-css">#contenedor {
+ border: 1px solid blue;
+}</code></pre>
+                    <p>
+                        Este CSS aplica un borde azul al elemento HTML que 
+                        tiene el id “contenedor”.
+                    </p>
+                    <pre><code class="language-css">&lt;div id="rad"&gt;&lt;/div&gt;</code></pre>
+                    <p>
+                        Notese que el selector de clases tiene un punto 
+                        seguido del nombre de la clase .mi-clase, mientras 
+                        que el selector de id tiene un # seguido del id en 
+                        cuestion, por ejemplo #mi-id.
+                    </p>
+                    <p>
+                        <strong>Selector por atributos</strong>: selecciona 
+                        todos los elementos que contenga un atributo 
+                        HTML especifico, los atributos van entre [ ].
+                    </p>
+                    <pre><code class="language-css">[data-type='primary'] {
+    color: red;
+}</code></pre>
+                    <p>
+                        Este CSS le aplica texto de color rojo a todos 
+                        los elementos que tengan un atributo data-type 
+                        con el valor primary.
+                    </p>
+                    <p>
+                        Como este:
+                    </p>
+                    <pre><code class="language-html">&lt;div data-type="primary"&gt;&lt;/div&gt;</code></pre>
+                    <p>
+                        <strong>Agrupando selectores</strong>: Se pueden 
+                        utilizar muchos selectores, separándolos con coma.
+                    </p>
+                    <pre><code class="language-css">strong,
+em,
+.my-class,
+[lang] {
+    color: red;
+}</code></pre>
+                    <p>
+                        Este ejemplo cambia el color a todos los elementos 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">&lt;strong&gt;</span> 
+                        y 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">&lt;em&gt;</span>.
+                        También a los elementos que tengan la clase .my-class y los que tengan el atributo lang.
+                    </p>
+                    <section class="flex flex-col gap-2">
+                        <h3 id="introduccion" 
+                            class="text-xl font-bold">
+                            3.3 Pseudo-clases
+                        </h3>
+                        <p>
+                            Los elementos HTML pueden tener distintos estados, 
+                            por ejemplo cuando un elemento tiene el mouse encima 
+                            se encuentra en estado :hover. Para estas situaciones, 
+                            se utiliza la pseudoclase :hover.
+                        </p>
+                    <pre><code class="language-css">a:hover {
+ outline: 1px dotted green;
+}</code></pre>
+                        <p>
+                            En este ejemplo aplica un outline punteado de color 
+                            verde, a todos los elementos a que se encuentran 
+                            en estado hover. Es decir, cuando pasamos el 
+                            mouse por encima.
+                        </p>
+                    </section>
+                </section>
+                <section class="flex flex-col gap-2">
+                    <h2 id="cascada" 
+                        class="text-2xl font-bold">
+                        4. Cascada
+                    </h2>
+                    <p>
+                        CSS son las siglas para Cascading Stylesheets 
+                        (hojas de estilo en cascada).
+                        A veces, dos o más reglas CSS pueden aplicarse a un 
+                        elemento HTML, el algoritmo de cascada es quien 
+                        se encarga de resolver los conflictos que esto pueda provocar.
+                    </p>
+                    <p>
+                        En este ejemplo el texto del botón con el siguiente CSS 
+                        será azul a pesar de que primero se lo hizo rojo.
+                    </p>
+                    <pre><code class="language-css">button {
+    color: red;
+}
+
+button {
+    color: blue;
+}</code></pre>
+                    <p>
+                        El algoritmo de cascada tiene en cuenta el orden en 
+                        que aparecen las reglas CSS y cómo aparecen mientras 
+                        calcula la resolución de conflictos. En el ejemplo 
+                        anterior, hay dos reglas que tienen selectores de 
+                        especificidad idéntica, por lo que la última en ser 
+                        declarada fue la que ganó, los elementos se vuelven 
+                        más específicos cuanto más abajo están declarados en la página.
+                    </p>
+                    <p>
+                        Los estilos pueden provenir de varias fuentes en una 
+                        página HTML, por ejemplo de una etiqueta 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">&lt;link&gt;</span>,
+                        y 
+                        una etiqueta 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">&lt;style&gt;</span>
+                        incrustada y CSS en línea como se define en el atributo 
+                        de style. El orden también se aplica a dichos elementos, 
+                        el que se encuentre declarado más abajo tendrá mayor especificidad.
+                    </p>
+                    <section class="flex flex-col gap-2">
+                        <h3 id="especificidad" 
+                            class="text-xl font-bold">
+                            3.4 Especificidad
+                        </h3>
+                        <p>
+                            La especificidad es un algoritmo que determina qué 
+                            selector de CSS es el más específico, utilizando 
+                            un sistema de “puntuación” para realizar esos cálculos. 
+                            Al hacer una regla más específica que otra, puede hacer 
+                            que se aplique incluso si algún otro CSS que coincida 
+                            con el selector aparece más adelante en el CSS.
+                        </p>
+                        <p>
+                            El CSS dirigido a la clase en un elemento hará que la 
+                            regla sea más especíhica y se considerará más 
+                            importante de aplicar que el CSS dirigido solamente 
+                            al elemento HTML.
+                        </p>
+                        <p>
+                            Un ID hace que el CSS sea aún más específico, por lo 
+                            que los estilos aplicados a una ID anularán los 
+                            aplicados de otras formas.
+                        </p>
+                        <p>
+                            Un atributo style en línea con CSS declarado anulará 
+                            todos los demás CSS, independientemente de su 
+                            posición, a menos que una declaración tenga 
+                            definido el atributo de 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">!important</span>
+                        </p>
+                        <br>
+                        <p>
+                            Orden de mayor a menor especificidad: 
+                        </p>
+                        <ol class="list-inside list-decimal">
+                            <li>
+                                !important.
+                            </li>
+                            <li>
+                                Estilos en linea.
+                            </li>
+                            <li>
+                                IDs.
+                            </li>
+                            <li>
+                                Clases, pseudo-clases, atributos.
+                            </li>
+                            <li>
+                                Elementos y pseudo-elementos.
+                            </li>
+                        </ol>
+                        <p class="font-bold">
+                            La especificidad es acumulativa
+                        </p>
+                        <p>
+                            Como ya vimos arriba, a cada tipo de selector se le 
+                            otorgan “puntos” que indican qué tan específico es. 
+                            Los puntos de todos los selectores que usamos para 
+                            apuntar a un elemento se suman dando como resultado su especificidad.
+                            Esto significa que si apuntamos a un elemento con 
+                            una lista de selección como 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">a.my-class.another-class[href]:hover</span>,
+                            obtenemos algo bastante difícil de sobrescribir con otro CSS, 
+                            por esta razón es una buena idea mantener los 
+                            selectores lo más simples posible.
+                        </p>
+                        <p class="font-bold">
+                            Origen
+                        </p>
+                        <p>
+                            El CSS que escribimos no es el único CSS que se 
+                            aplica a una página. El algoritmo de cascada 
+                            también tiene en cuenta el origen de los CSS. 
+                            Este origen incluye la hoja de estilo interna 
+                            del navegador, los estilos agregados por las 
+                            extensiones del navegador o el sistema operativo y 
+                            tu CSS creado.
+                        </p>
+                        <p>
+                            El orden de especificidad de estos orígenes, 
+                            de mayor a menor, es el siguiente:
+                        </p>
+                        <ol class="list-inside list-decimal">
+                            <li>
+                                Agente de usuario !important: Cualquier 
+                                !important que se define en el CSS 
+                                predeterminado, proporcionado por el navegador.
+                            </li>
+                            <li>
+                                Estilos de usuarios locales !important: 
+                                Cualquier !important que provenga del 
+                                nivel del sistema operativo o del 
+                                nivel de las extensiones del navegador.
+                            </li>
+                            <li>
+                                Los !important creados: Cualquier !important 
+                                que agregamos en nuestro CSS.
+                            </li>
+                            <li>
+                                CSS creado: El resto de nuestro CSS.
+                            </li>
+                            <li>
+                                Estilos de usuarios locales: Pueden provenir 
+                                del nivel del sistema operativo, por ejemplo 
+                                un tamaño de fuente base. También pueden 
+                                provenir de extensiones del navegador, por 
+                                ejemplo una extensión de navegador que 
+                                permite al usuario escribir su propio CSS 
+                                personalizado para una página web.
+                            </li>
+                            <li>
+                                Estilos base de agente de usuario: Son 
+                                los estilos que el navegador aplica a los 
+                                elementos HTML de forma predeterminada.
+                            </li>
+                        </ol>
+                        <p class="font-bold">
+                            Importancia
+                        </p>
+                        <p>
+                            No todas las reglas de CSS se calculan de 
+                            la misma manera entre sí, ni se les da la 
+                            misma especificidad entre sí.
+                        </p>
+                        <p>
+                            El orden de importancia, de mayor a menor, es el siguiente:
+                        </p>
+                        <ol class="list-inside list-decimal">
+                            <li>
+                                Reglas de tipo transition
+                            </li>
+                            <li>
+                                Reglas de tipo !important
+                            </li>
+                            <li>
+                                Reglas de tipo animation
+                            </li>
+                            <li>
+                                Reglas de tipo normal, cómo font-size , background o color
+                            </li>
+                        </ol>
+                        <p>
+                            Los tipos de reglas de 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">transition</span>
+                            (transición) y 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">animation</span>
+                            (animación) tienen más importancia 
+                            que las reglas normales. En el caso de las 
+                            transiciones, es incluso más importante que las 
+                            reglas de tipo 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">!important</span>
+                            . Esto se debe a que 
+                            cuando una animación o transición se activa, su 
+                            comportamiento esperado es cambiar el estado visual.
+                        </p>
+                    </section>
+            </section>
+        </article>
+        <footer class="flex flex-row justify-between p-4 border-t
+            border-stone-400"
+        >
+            Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez, 
+        </footer>
+    </body>
+</html>
