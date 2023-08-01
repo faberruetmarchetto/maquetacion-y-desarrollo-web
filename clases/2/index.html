@@ -23,7 +23,7 @@
                     .maquetacion-y-desarrollo-web{}
                 </span>
                 <span class="font-normal">
-                    &rsaquo; <span class="font-semibold">Clase 1</span>
+                    &rsaquo; <span class="font-semibold">Clase 2</span>
                 </span>
             </div>
         </header>
@@ -36,19 +36,88 @@
                 </h2>
                 <ol class="list-inside list-decimal text-stone-600">
                         <li>
-                            <a href="#repaso" 
+                            <a href="#introduccion" 
                                 class=" hover:text-indigo-600"
                             >
-                                Repaso de HTML
+                                Introduccion
                             </a>
                         </li>
                         <li>
-                            <a href="#elementos"
+                            <a href="#box-model"
                                 class=" hover:text-indigo-600"
                             >
-                                Elementos HTML
+                                Modelo de caja (box model)
                             </a>
                         </li>
+                        <ol class="list-inside list-decimal ml-5">
+                            <li>
+                                <a href="#contenido"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Contenido y tamaño
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#areas"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Las areas del modelo caja 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#analogia"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Una analogia util
+                                </a>
+                            </li>
+                        </ol>
+                        <li>
+                            <a href="#selectores" 
+                                class=" hover:text-indigo-600"
+                            >
+                                Selectores
+                            </a>
+                        </li>
+                        <ol class="list-inside list-decimal ml-5">
+                            <li>
+                                <a href="#regla-css"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Partes de una regla CSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#selectores-simples"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Selectores simples
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#pseudoclases"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Pseudo-clases
+                                </a>
+                            </li>
+                        </ol>
+                        <li>
+                            <a href="#cascada" 
+                                class=" hover:text-indigo-600"
+                            >
+                                Cascada
+                            </a>
+                        </li>
+                        <ol class="list-inside list-decimal ml-5">
+                            <li>
+                                <a href="#especificidad"
+                                    class=" hover:text-indigo-600"
+                                >
+                                    Especificidad
+                                </a>
+                            </li>
+                        </ol>
                 </ol>
             </section>
             <section class="flex flex-col gap-2">
@@ -82,7 +151,7 @@
                 </p>
             </section>
             <section class="flex flex-col gap-2">
-                <h2 id="introduccion" 
+                <h2 id="box-model" 
                     class="text-2xl font-bold">
                     2. Modelo de caja (Box model) 
                 </h2>
@@ -95,7 +164,7 @@
                     Digamos que tienes este fragmento de HTML:
                 </p>
 <pre><code class="language-html">&lt;p&gt;
-    Soy un parrafo con algunas palabras.
+    I am a paragraph of text that has a few words in it.
 &lt;/p&gt;</code></pre>
                 <p>
                     Luego escribiendo este CSS para el parrafo anterior:
@@ -118,14 +187,16 @@
                 </p>
                 <p>
                     ¿Porqué sucede eso?  142 = 100 de ancho 
-                    + 40 (padding izq + der) + 2 (border izq + der)
+                    + 40 (padding izq + der) + 2 (border izq + der).
+                </p>
+                <p>
                     El modelo de caja es una base fundamental de CSS y 
                     comprender cómo funciona, cómo se ve afectado por otros 
                     aspectos de CSS y, lo que es más importante, cómo puedes 
                     controlarlo te ayudará a escribir un CSS más predecible.
                 </p>
                 <section class="flex flex-col gap-2">
-                    <h3 id="introduccion" 
+                    <h3 id="contenido" 
                         class="text-xl font-bold">
                         2.1 Contenido y tamaño 
                     </h3>
@@ -176,7 +247,7 @@
                 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
                 </section>
                 <section class="flex flex-col gap-2">
-                    <h3 id="introduccion" 
+                    <h3 id="areas" 
                         class="text-xl font-bold">
                         2.2 Las areas del modelo caja 
                     </h3>
@@ -225,7 +296,7 @@
                 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
                 </section>
                 <section class="flex flex-col gap-2">
-                    <h3 id="introduccion" 
+                    <h3 id="analogia" 
                         class="text-xl font-bold">
                         2.3 Una analogia util 
                     </h3>
@@ -282,7 +353,7 @@
     font-size: 1.5em;
 }</code></pre>
                 <section class="flex flex-col gap-2">
-                    <h3 id="introduccion" 
+                    <h3 id="regla-css" 
                         class="text-xl font-bold">
                         3.1 Partes de una regla CSS
                     </h3>
@@ -321,7 +392,7 @@
                     </p>
                 </section>
                 <section class="flex flex-col gap-2">
-                    <h3 id="introduccion" 
+                    <h3 id="selectores-simples" 
                         class="text-xl font-bold">
                         3.2 Selectores simples 
                     </h3>
@@ -418,14 +489,20 @@
                     <p>
                         <strong>Selector por atributos</strong>: selecciona 
                         todos los elementos que contenga un atributo 
-                        HTML especifico, los atributos van entre [ ].
+                        HTML especifico, los atributos van entre 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">[ ]</span>.
                     </p>
                     <pre><code class="language-css">[data-type='primary'] {
     color: red;
 }</code></pre>
                     <p>
                         Este CSS le aplica texto de color rojo a todos 
-                        los elementos que tengan un atributo data-type 
+                        los elementos que tengan un atributo 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">data-type</span> 
                         con el valor primary.
                     </p>
                     <p>
@@ -451,18 +528,28 @@ em,
                         <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
                             font-semibold rounded"
                             style="font-family: 'Source Code Pro', monospace;">&lt;em&gt;</span>.
-                        También a los elementos que tengan la clase .my-class y los que tengan el atributo lang.
+                        También a los elementos que tengan la clase 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">.my-class</span>.
+                        y los que tengan el atributo 
+                        <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                            font-semibold rounded"
+                            style="font-family: 'Source Code Pro', monospace;">lang</span>.
                     </p>
                     <section class="flex flex-col gap-2">
-                        <h3 id="introduccion" 
+                        <h3 id="pseudoclases" 
                             class="text-xl font-bold">
                             3.3 Pseudo-clases
                         </h3>
                         <p>
                             Los elementos HTML pueden tener distintos estados, 
                             por ejemplo cuando un elemento tiene el mouse encima 
-                            se encuentra en estado :hover. Para estas situaciones, 
-                            se utiliza la pseudoclase :hover.
+                            se encuentra en estado "hover". Para estas situaciones, 
+                            se utiliza la pseudoclase 
+                            <span class="bg-indigo-100 px-1 hover:bg-indigo-200 
+                                font-semibold rounded"
+                                style="font-family: 'Source Code Pro', monospace;">:hover</span>.
                         </p>
                     <pre><code class="language-css">a:hover {
  outline: 1px dotted green;
@@ -525,7 +612,7 @@ button {
                     <section class="flex flex-col gap-2">
                         <h3 id="especificidad" 
                             class="text-xl font-bold">
-                            3.4 Especificidad
+                            4.1 Especificidad
                         </h3>
                         <p>
                             La especificidad es un algoritmo que determina qué 
