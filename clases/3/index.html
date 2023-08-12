@@ -68,24 +68,24 @@
 <li><a href="#longitudes-relativas-1">Longitudes relativas</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#flexbox">4. Flexbox</a>
+<li><a href="#flexbox">3. Flexbox</a>
 <ul>
-<li><a href="#la-propiedad-display">4.1 La propiedad display</a></li>
-<li><a href="#flexbox-en-detalle">4.2 Flexbox en detalle</a>
+<li><a href="#la-propiedad-display">3.1 La propiedad display</a></li>
+<li><a href="#flexbox-en-detalle">3.2 Flexbox en detalle</a>
 <ul>
-<li><a href="#dirección-de-los-items">4.2.1 Dirección de los items</a></li>
-<li><a href="#alineamiento-de-los-items">4.2.2 Alineamiento de los items</a></li>
+<li><a href="#dirección-de-los-items">3.2.1 Dirección de los items</a></li>
+<li><a href="#alineamiento-de-los-items">3.2.2 Alineamiento de los items</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#maquetacion-de-header-y-footer.">5. Maquetacion de header y footer.</a>
+<li><a href="#maquetacion-de-header-y-footer.">4. Maquetacion de header y footer.</a>
 <ul>
-<li><a href="#primer-paso-estructura-de-un-documento-html">5.1 Primer paso: Estructura de un Documento HTML</a></li>
-<li><a href="#segundo-paso-creación-del-header">5.2 Segundo paso: Creación del Header</a></li>
-<li><a href="#tercer-paso-creación-del-footer">5.3 Tercer paso: Creación del Footer</a></li>
-<li><a href="#cuarto-paso-estilización">5.4 Cuarto paso: Estilización</a>
+<li><a href="#primer-paso-estructura-de-un-documento-html">4.1 Primer paso: Estructura de un Documento HTML</a></li>
+<li><a href="#segundo-paso-creación-del-header">4.2 Segundo paso: Creación del Header</a></li>
+<li><a href="#tercer-paso-creación-del-footer">4.3 Tercer paso: Creación del Footer</a></li>
+<li><a href="#cuarto-paso-estilización">4.4 Cuarto paso: Estilización</a>
 <ul>
-<li><a href="#como-vincular-un-archivo-de-estilos-con-un-documento-html">5.5 Como vincular un archivo de estilos, con un documento HTML</a></li>
-<li><a href="#ejemplo-final-con-css-y-html">5.6 Ejemplo final con CSS y HTML</a></li>
+<li><a href="#como-vincular-un-archivo-de-estilos-con-un-documento-html">4.5 Como vincular un archivo de estilos, con un documento HTML</a></li>
+<li><a href="#ejemplo-final-con-css-y-html">4.6 Ejemplo final con CSS y HTML</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -297,8 +297,8 @@ p {
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 <p>En este ejemplo, el div será el 10% del ancho de la ventana gráfica, porque 1vw es el 1% del ancho de la ventana gráfica. El elemento p tiene un max-width de 60ch que significa que no puede exceder el ancho de 60 caracteres “0” en la fuente y el tamaño calculados.</p>
-<h1 id="flexbox">4. Flexbox</h1>
-<h2 id="la-propiedad-display">4.1 La propiedad display</h2>
+<h1 id="flexbox">3. Flexbox</h1>
+<h2 id="la-propiedad-display">3.1 La propiedad display</h2>
 <p>La propiedad <code>display</code> sirve para dos cosas.<br />
 Una de ellas es determinar si la caja (box) a la que se aplica actua como inline o como bloque.</p>
 <pre class="css"><code>.mi-elemento {
@@ -318,13 +318,13 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
    display: flex;
 }</code></pre>
 <p>La propiedad <code>display</code> también determina cómo se comportan los elementos hijos del elemento. Por ejemplo, si usamos la <code>display: flex</code> la caja se transforma en una caja a nivel de bloque, y sus hijos en items flex. Lo que permite controlar su alineación, orden y flujo.</p>
-<h2 id="flexbox-en-detalle">4.2 Flexbox en detalle</h2>
+<h2 id="flexbox-en-detalle">3.2 Flexbox en detalle</h2>
 <p>Flexbox es un mecanismo de layout para layouts unidimensionales. Es decir, a lo largo de un solo eje, horizontal o vertical. Por defecto, flexbox alinea los elementos hijos uno al lado del otro, en la dirección inline y los estira (stretch) en la dirección block, para que tengan la misma altura.</p>
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="GRwbGQY" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/GRwbGQY"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-<h3 id="dirección-de-los-items">4.2.1 Dirección de los items</h3>
+<h3 id="dirección-de-los-items">3.2.1 Dirección de los items</h3>
 <p>Para cambiar la dirección en la que se muestran los elementos hijos de un contenedor con <code>display: flex;</code> se utiliza la propiedad <code>flex-direction</code>. Puede tener los siguientes valores:</p>
 <ul>
 <li>row: los items se muestran en fila (horizontal).</li>
@@ -336,7 +336,7 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
 <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/RwqzJBY"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-<h3 id="alineamiento-de-los-items">4.2.2 Alineamiento de los items</h3>
+<h3 id="alineamiento-de-los-items">3.2.2 Alineamiento de los items</h3>
 <p>Hay dos tipos de propiedades flex para alineamiento, unas orientadas a la distribución del espacio y otras al alineamiento. Las propiedades para distribuir el espacio son:</p>
 <p><code>justify-content</code>: distribuye el espacio en el eje principal. <code>align-content</code>: distribuye el espacio en el eje secundario.</p>
 <p>Las propiedades para alinear son: <code>align-self</code>: alinea un único elemento en el eje secundario. <code>align-items</code>: alinea todos los items en el eje secundario.</p>
@@ -349,9 +349,9 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
 <span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/poREawo"> Learn CSS - Flexbox - Align content</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-<h1 id="maquetacion-de-header-y-footer.">5. Maquetacion de header y footer.</h1>
+<h1 id="maquetacion-de-header-y-footer.">4. Maquetacion de header y footer.</h1>
 <p>Ahora veremos una pequeña guía sobre la maquetación de un header y un footer básico utilizando HTML y CSS.</p>
-<h2 id="primer-paso-estructura-de-un-documento-html">5.1 Primer paso: Estructura de un Documento HTML</h2>
+<h2 id="primer-paso-estructura-de-un-documento-html">4.1 Primer paso: Estructura de un Documento HTML</h2>
 <p>Pueden usar el que entregaron la clase pasada, o pueden crear uno nuevo. Les recordamos que esta es la estructura basica:</p>
 <pre class="html"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -363,7 +363,7 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
     &lt;!-- Contenido de la página --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<h2 id="segundo-paso-creación-del-header">5.2 Segundo paso: Creación del Header</h2>
+<h2 id="segundo-paso-creación-del-header">4.2 Segundo paso: Creación del Header</h2>
 <p>Creamos un elemento <code>&lt;header&gt;</code> en el <code>&lt;body&gt;</code> de la página, algunas de las etiquetas que decidimos usar son <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>. Ejemplo de código HTML para el header:</p>
 <pre class="html"><code>&lt;header&gt;
     &lt;div class=&quot;logo&quot;&gt;Header&lt;/div&gt;
@@ -376,14 +376,14 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
         &lt;/ul&gt;
     &lt;/nav&gt;
 &lt;/header&gt;</code></pre>
-<h2 id="tercer-paso-creación-del-footer">5.3 Tercer paso: Creación del Footer</h2>
+<h2 id="tercer-paso-creación-del-footer">4.3 Tercer paso: Creación del Footer</h2>
 <p>Creamos un elemento <code>&lt;footer&gt;</code> en el <code>&lt;body&gt;</code> de la página, para este ejemplo solo usaremos un <code>&lt;p&gt;</code></p>
 <pre class="html"><code>&lt;footer&gt;
     &lt;p&gt;&amp;copy; 2023 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
 &lt;/footer&gt;</code></pre>
-<h2 id="cuarto-paso-estilización">5.4 Cuarto paso: Estilización</h2>
+<h2 id="cuarto-paso-estilización">4.4 Cuarto paso: Estilización</h2>
 <p>Lo primero que tenemos que hacer, es crear nuestro archivo de estilos <code>style.css</code> en la misma carpeta donde tenemos nuestro <code>index.html</code></p>
-<h3 id="como-vincular-un-archivo-de-estilos-con-un-documento-html">5.5 Como vincular un archivo de estilos, con un documento HTML</h3>
+<h3 id="como-vincular-un-archivo-de-estilos-con-un-documento-html">4.5 Como vincular un archivo de estilos, con un documento HTML</h3>
 <p>Una vez tengamos nuestro archivo <code>style.css</code> creado, deberemos referenciarlo desde <code>index.html</code></p>
 <pre class="html"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -396,7 +396,7 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p><code>&lt;link&gt;</code>: Es un elemento HTML que se utiliza para vincular recursos externos al documento. rel=“stylesheet”: Indica que el recurso es una hoja de estilo. type=“text/css”: Especifica el tipo de recurso que se vinculará. href=“style.css”: Es el atributo que contiene la ruta al archivo style.css</p>
-<h3 id="ejemplo-final-con-css-y-html">5.6 Ejemplo final con CSS y HTML</h3>
+<h3 id="ejemplo-final-con-css-y-html">4.6 Ejemplo final con CSS y HTML</h3>
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ZEmdjYK" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
 <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEmdjYK"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
 </p>

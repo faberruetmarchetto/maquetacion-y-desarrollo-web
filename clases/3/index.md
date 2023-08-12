@@ -174,9 +174,9 @@ p {
 En este ejemplo, el div será el 10% del ancho de la ventana gráfica, porque 1vw es el 1% del ancho de la ventana gráfica. El elemento p tiene un max-width de 60ch que significa que no puede exceder el ancho de 60 caracteres "0" en la fuente y el tamaño calculados.
 
 
-# 4. Flexbox
+# 3. Flexbox
 
-## 4.1 La propiedad display
+## 3.1 La propiedad display
 La propiedad `display` sirve para dos cosas.  
 Una de ellas es determinar si la caja (box) a la que se aplica actua como inline o como bloque. 
 
@@ -207,7 +207,7 @@ A menos que se modifique por CSS, un elemento block se va a expandir al ancho de
 ```
 La propiedad `display` también determina cómo se comportan los elementos hijos del elemento. Por ejemplo, si usamos la `display: flex` la caja se transforma en una caja a nivel de bloque, y sus hijos en items flex. Lo que permite controlar su alineación, orden y flujo.
 
-## 4.2 Flexbox en detalle
+## 3.2 Flexbox en detalle
 Flexbox es un mecanismo de layout para layouts unidimensionales. Es decir, a lo largo de un solo eje, horizontal o vertical. Por defecto, flexbox alinea los elementos hijos uno al lado del otro, en la dirección inline y los estira (stretch) en la dirección block, para que tengan la misma altura.
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="GRwbGQY" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
@@ -217,7 +217,7 @@ Flexbox es un mecanismo de layout para layouts unidimensionales. Es decir, a lo 
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-### 4.2.1 Dirección de los items
+### 3.2.1 Dirección de los items
 Para cambiar la dirección en la que se muestran los elementos hijos de un contenedor con `display: flex;` se utiliza la propiedad `flex-direction`.
 Puede tener los siguientes valores:
 
@@ -233,7 +233,7 @@ Puede tener los siguientes valores:
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-### 4.2.2 Alineamiento de los items
+### 3.2.2 Alineamiento de los items
 Hay dos tipos de propiedades flex para alineamiento, unas orientadas a la distribución del espacio y otras al alineamiento. Las propiedades para distribuir el espacio son:
 
 `justify-content`: distribuye el espacio en el eje principal.
@@ -259,11 +259,11 @@ Si estás trabajando en el eje principal las propiedades empiezan con `justify-`
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-# 5. Maquetacion de header y footer.
+# 4. Maquetacion de header y footer.
 
 Ahora veremos una pequeña guía sobre la maquetación de un header y un footer básico utilizando HTML y CSS.
 
-## 5.1 Primer paso: Estructura de un Documento HTML
+## 4.1 Primer paso: Estructura de un Documento HTML
 
 Pueden usar el que entregaron la clase pasada, o pueden crear uno nuevo. Les recordamos que esta es la estructura basica:
 
@@ -279,7 +279,7 @@ Pueden usar el que entregaron la clase pasada, o pueden crear uno nuevo. Les rec
 </body>
 </html>
 ```
-## 5.2 Segundo paso: Creación del Header
+## 4.2 Segundo paso: Creación del Header
 
 Creamos un elemento ``<header>`` en el ``<body>`` de la página, algunas de las etiquetas que decidimos usar son ``<nav>``, ``<ul>``, ``<li>``.
 Ejemplo de código HTML para el header:
@@ -298,7 +298,7 @@ Ejemplo de código HTML para el header:
 </header>
 ```
 
-## 5.3 Tercer paso: Creación del Footer
+## 4.3 Tercer paso: Creación del Footer
 
 Creamos un elemento `<footer>` en el `<body>` de la página, para este ejemplo solo usaremos un `<p>`
 
@@ -308,11 +308,11 @@ Creamos un elemento `<footer>` en el `<body>` de la página, para este ejemplo s
 </footer>
 ```
 
-## 5.4 Cuarto paso: Estilización
+## 4.4 Cuarto paso: Estilización
 
 Lo primero que tenemos que hacer, es crear nuestro archivo de estilos `style.css` en la misma carpeta donde tenemos nuestro `index.html`
 
-### 5.5 Como vincular un archivo de estilos, con un documento HTML
+### 4.5 Como vincular un archivo de estilos, con un documento HTML
 
 Una vez tengamos nuestro archivo `style.css` creado, deberemos referenciarlo desde  `index.html`
 
@@ -334,7 +334,7 @@ rel="stylesheet": Indica que el recurso es una hoja de estilo.
 type="text/css": Especifica el tipo de recurso que se vinculará.
 href="style.css": Es el atributo que contiene la ruta al archivo style.css
 
-### 5.6 Ejemplo final con CSS y HTML 
+### 4.6 Ejemplo final con CSS y HTML 
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ZEmdjYK" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEmdjYK">
