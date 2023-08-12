@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../markdown.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <meta name="author" content="Maquetacion y Desarrollo Web I" />
+  <meta name="description" content="Clase 4" />
+  <title>Clase 4 - Maquetacion y Desarrollo Web I</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header style="display: flex; flex-direction: row; justify-content: between;
+    padding: 0.5em; border-bottom: solid 1px #a8a29e;"
+>
+    <div style="display: flex; flex-direction: column; gap: 0.5em; background-color: white;
+        opacity: 0.9;"
+    >
+        <span style="font-family: 'source code pro', monospace; color: #4f46e5;
+            font-size: 1.5rem; line-height: 2rem;"
+        >
+            .maquetacion-y-desarrollo-web{}
+        </span>
+        <span style="font-weight: 400;">
+            &rsaquo; <span style="font-weight: 600;">Clase 4</span>
+        </span>
+    </div>
+</header>
+<article>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">&rsaquo; Indice de contenidos</h2>
+<ul>
+<li><a href="#colores">1. Colores</a>
+<ul>
+<li><a href="#colores-numéricos">1.1 Colores Numéricos</a>
+<ul>
+<li><a href="#notación-hexadecimal">1.1.1 Notación Hexadecimal</a></li>
+</ul></li>
+<li><a href="#colores-nombrados">1.2 Colores nombrados</a></li>
+<li><a href="#transparencia">1.3 Transparencia</a></li>
+<li><a href="#palabras-clave-del-sistema">1.4 Palabras clave del sistema</a></li>
+<li><a href="#dónde-usar-color-en-css">1.5 ¿Dónde usar color en CSS?</a></li>
+</ul></li>
+<li><a href="#unidades-de-dimensionamiento">2. Unidades de dimensionamiento</a>
+<ul>
+<li><a href="#porcentajes">2.1 Porcentajes</a></li>
+<li><a href="#dimensiones-y-longitudes">2.2 Dimensiones y longitudes</a>
+<ul>
+<li><a href="#longitudes-absolutas">Longitudes absolutas</a></li>
+<li><a href="#longitudes-relativas">Longitudes relativas</a></li>
+<li><a href="#longitudes-relativas-1">Longitudes relativas</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#flexbox">4. Flexbox</a>
+<ul>
+<li><a href="#la-propiedad-display">4.1 La propiedad display</a></li>
+<li><a href="#flexbox-en-detalle">4.2 Flexbox en detalle</a>
+<ul>
+<li><a href="#dirección-de-los-items">4.2.1 Dirección de los items</a></li>
+<li><a href="#alineamiento-de-los-items">4.2.2 Alineamiento de los items</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#maquetacion-de-header-y-footer.">5. Maquetacion de header y footer.</a>
+<ul>
+<li><a href="#primer-paso-estructura-de-un-documento-html">5.1 Primer paso: Estructura de un Documento HTML</a></li>
+<li><a href="#segundo-paso-creación-del-header">5.2 Segundo paso: Creación del Header</a></li>
+<li><a href="#tercer-paso-creación-del-footer">5.3 Tercer paso: Creación del Footer</a></li>
+<li><a href="#cuarto-paso-estilización">5.4 Cuarto paso: Estilización</a>
+<ul>
+<li><a href="#como-vincular-un-archivo-de-estilos-con-un-documento-html">5.5 Como vincular un archivo de estilos, con un documento HTML</a></li>
+<li><a href="#ejemplo-final-con-css-y-html">5.6 Ejemplo final con CSS y HTML</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="colores">1. Colores</h1>
+<p>Colorear nuestras páginas es una de las partes más importantes para darles un estilo deseado. Existen muchas formas de especificar los colores en <strong>CSS</strong>, a continuación detallaremos algunas.</p>
+<h2 id="colores-numéricos">1.1 Colores Numéricos</h2>
+<p>se puede determinar un color de varias maneras, una de ellas es mediante el uso de sistemas numéricos, por ejemplo <strong>RGB</strong> o <strong>Hexadecimal</strong>. &gt;<strong>ejemplo de la propiedad color con notación hexadecimal:</strong></p>
+<pre class="css"><code>h1 {
+  color: #b71540;
+}</code></pre>
+<h3 id="notación-hexadecimal">1.1.1 Notación Hexadecimal</h3>
+La notación hexadecimal asigna valores numéricos a los colores rojo, verde y azul, los 3 colores a partir de los cuales se puede formar el resto. Comúnmente es la más usada. Los rangos de esta notación van del 0-9 para dichos números, y las letras A-F para los números del 10 al 15. Cuando son usados en secuencias de seis dígitos, se corresponden a dos dígitos por color y se traducen en escala RGB a rangos de entre 0 y 255 para cada uno de los canales, Rojo, Verde y Azul, en ese orden. Combinando distintas secuencias hexadecimales podemos jugar hasta obtener el color que buscamos. &gt;<strong>ejemplo de colores en hexadecimal:</strong>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="BapNrPG" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/BapNrPG"> Learn CSS - HEX colors</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="colores-nombrados">1.2 Colores nombrados</h2>
+<p>Existen una serie de colores que ya vienen establecidos, son nombrados con palabras clave que corresponden al nombre de dicho color en inglés. Algunos de los más usados podrían ser <strong>black</strong> (negro), <strong>white</strong> (blanco), etc. &gt;<strong>ejemplo de la propiedad color con una palabra clave de color ya definida:</strong></p>
+<pre class="css"><code>h1 {
+  color: black;
+}</code></pre>
+<h2 id="transparencia">1.3 Transparencia</h2>
+Adicionalmente se pueden definir dos dígitos más, conocidos como “alpha”, que es básicamente el porcentaje de transparencia de nuestro color. &gt;<strong>ejemplo de transparencia:</strong> por ejemplo si quisieramos un color negro, nuestro codigo hexadecimal seria: #000000 El mismo color pero con 0% de transparencia sería: #00000000, en cambio para un 50% sería: #00000080
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="VwPLXdr" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/VwPLXdr"> Learn CSS - HEX Codes With Alpha</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Así como los colores vistos antes, otra palabra clave existente es <strong>transparent</strong> (transparente), que representa a un color totalmente transparente <strong>De igual forma, siempre es recomendable definir nuestros propios colores de forma más precisa con la notación Hexadecimal</strong></p>
+<h2 id="palabras-clave-del-sistema">1.4 Palabras clave del sistema</h2>
+<p>Son palabras clave de colores que vienen definidas a partir del tema de nuestro sistema operativo. Por ejemplo <strong>Background</strong>, el cual corresponde al color del fondo de pantalla del escritorio, como esta hay muchas más. Dichas palabras clave al depender del sistema cambian según el contexto donde son usadas. siempre van a empezar por mayúscula para diferenciarse de las otras palabras clave de colores estándar.</p>
+<h2 id="dónde-usar-color-en-css">1.5 ¿Dónde usar color en CSS?</h2>
+<p>Si una propiedad CSS acepta el tipo de datos <code>&lt;color&gt;</code> como uno de sus valores, va aceptar cualquiera de los métodos de coloración. Para darle estilo al texto, existen <code>color</code> (color del texto), <code>text-shadow</code> (color de la sombra del texto) y <code>text-decoration-color</code> (color del subrayado), entre otras. Todas son propiedades que aceptan colores como sus valores, o como parte de sus valores.</p>
+<p>Para los fondos, se puede especificar un color como valor para <code>background</code> (color de fondo, no confundir con la palabra clave <strong>Background</strong> que vimos antes)</p>
+<p>Por último, <code>border-color</code> (color del borde) y <code>outline-color</code> (color del outline), sirven para darle color a nuestras boxes (tema que veremos más adelante en esta misma unidad).</p>
+<h1 id="unidades-de-dimensionamiento">2. Unidades de dimensionamiento</h1>
+<p>En este módulo aprenderemos a dimensionar elementos mediante CSS, trabajando con el medio flexible de la web.</p>
+<p>La web es un medio responsivo, pero a veces deseamos controlar sus dimensiones para mejorar la calidad general de la interfaz. Un buen ejemplo de esto es limitar la longitud de las líneas para mejorar la legibilidad.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="bGgEGxj" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/bGgEGxj"> Learn CSS - Units - Intro</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Para este caso, puede usar una unidad ch, que es igual al ancho de un carácter “0” en la fuente renderizada a su tamaño calculado. Esta unidad le permite limitar el ancho del texto con una unidad diseñada para ajustar su tamaño, lo que a su vez, permite un control predecible independientemente del tamaño de ese texto. La unidad ch es una de las pocas unidades que son útiles para contextos específicos como este ejemplo.</p>
+<h2 id="porcentajes">2.1 Porcentajes</h2>
+<p>Al usar un porcentaje en CSS, necesita saber cómo se calcula éste. Por ejemplo, width se calcula como un porcentaje del ancho del elemento principal.</p>
+<pre><code>div {
+  width: 300px;
+  height: 100px;
+}
+
+div p {
+  width: 50%; /* calculated: 150px */
+}</code></pre>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ZELbwwj" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/ZELbwwj"> Learn CSS - Sizing - Percentages</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>En el fragmento anterior, tanto margin-top como padding-left se calcularán en 150px.</p>
+<h2 id="dimensiones-y-longitudes">2.2 Dimensiones y longitudes</h2>
+<p>Si adjunta una unidad a un número, se convierte en una dimensión. Por ejemplo, 1rem es una dimensión.</p>
+<p>Las longitudes son dimensiones que se refieren a la distancia y pueden ser absolutas o relativas.</p>
+<h3 id="longitudes-absolutas">Longitudes absolutas</h3>
+<p>Todas las longitudes absolutas se resuelven contra la misma base, lo que las hace predecibles dondequiera que se utilicen en su CSS. Por ejemplo, si usa cm para dimensionar su elemento y luego imprime, debería ser exacto si lo compara con una regla.</p>
+<p>Las longitudes absolutas pueden resultar útiles a la hora de imprimir.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Unidad</th>
+<th style="text-align: center;">Nombre</th>
+<th style="text-align: right;">Equivalente a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">cm</td>
+<td style="text-align: center;">Centímetros</td>
+<td style="text-align: right;">1 cm = 96 px/2.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mm</td>
+<td style="text-align: center;">Milimetros</td>
+<td style="text-align: right;">1 mm = 1/10 de 1 cm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q</td>
+<td style="text-align: center;">Cuarto de milímetro</td>
+<td style="text-align: right;">1Q = 1/40 de 1 cm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">in</td>
+<td style="text-align: center;">Pulgadas</td>
+<td style="text-align: right;">1 in = 2.54 cm = 96 px</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pc</td>
+<td style="text-align: center;">Picas</td>
+<td style="text-align: right;">1pc = 1/6 de 1 in</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pt</td>
+<td style="text-align: center;">Puntos</td>
+<td style="text-align: right;">1 pt = 1/72 de 1 in</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">px</td>
+<td style="text-align: center;">Pixeles</td>
+<td style="text-align: right;">1 px = 1/96 de 1 in</td>
+</tr>
+</tbody>
+</table>
+<h3 id="longitudes-relativas">Longitudes relativas</h3>
+<p>La longitud relativa se calcula contra un valor base, muy parecido a un porcentaje. La diferencia entre estos y los porcentajes es que puede dimensionar los elementos contextualmente</p>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Unidad</th>
+<th style="text-align: center;">Equivalente a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">em</td>
+<td style="text-align: center;">En relación con el tamaño de fuente, es decir, 1.5em será un 50% más grande que el tamaño de fuente calculado base de su padre. (Históricamente, la altura de la letra mayúscula “M”).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ex</td>
+<td style="text-align: center;">Heurística para determinar si se debe usar la x-height,, una letra “x” o <code>.5em</code> en el tamaño de fuente calculado actual del elemento.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cap</td>
+<td style="text-align: center;">Altura de las letras mayúsculas en el tamaño de fuente calculado actual del elemento.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ch</td>
+<td style="text-align: center;">Avance de carácter promedio de un glifo estrecho en la fuente del elemento (representado por el glifo “0”).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ic</td>
+<td style="text-align: center;">Avance de carácter promedio de un glifo de ancho completo en la fuente del elemento, representado por el glifo “水” (ideograma de agua CJK, U + 6C34).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rem</td>
+<td style="text-align: center;">Tamaño de fuente del elemento raíz (el valor predeterminado es 16px).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lh</td>
+<td style="text-align: center;">Altura de línea del elemento.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rlh</td>
+<td style="text-align: center;">Altura de línea del elemento raíz.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg"/></p>
+<h3 id="longitudes-relativas-1">Longitudes relativas</h3>
+<p>Puede utilizar las dimensiones de la ventana gráfica (ventana del navegador) como una base relativa. Estas unidades reparten el espacio disponible de la ventana gráfica.</p>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">unidad</th>
+<th style="text-align: center;">relativa a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">vw</td>
+<td style="text-align: center;">1% del ancho de la ventana gráfica. Se usa esta unidad para hacer trucos de fuentes geniales, como cambiar el tamaño de una fuente de encabezado en función del ancho de la página, de modo que a medida que el usuario cambia el tamaño de la ventana, la fuente también cambia de tamaño.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vh</td>
+<td style="text-align: center;">1% de la altura de la ventana gráfica. Puede usarla para organizar elementos en una interfaz de usuario, si tiene una barra de herramientas de pie de página, por ejemplo.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vi</td>
+<td style="text-align: center;">1% del tamaño de la ventana gráfica en el eje en línea del elemento raíz. El eje se refiere a los modos de escritura. En los modos de escritura horizontal como el inglés, el eje en línea es horizontal. En los modos de escritura vertical como algunos tipos de letra japoneses, el eje en línea va de arriba a abajo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vb</td>
+<td style="text-align: center;">1% del tamaño de la ventana gráfica en el eje del bloque del elemento raíz. Para el eje del bloque, esta sería la direccionalidad del lenguaje. Los idiomas LTR como el inglés tendrían un eje de bloque vertical, ya que los lectores en inglés analizan la página de arriba a abajo. Un modo de escritura vertical tiene un eje de bloque horizontal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vmin</td>
+<td style="text-align: center;">1% de la dimensión más pequeña de la ventana gráfica.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vmax</td>
+<td style="text-align: center;">1% de la dimensión más grande de la ventana gráfica.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>div {
+  width: 10vw;
+}
+
+p {
+  max-width: 60ch;
+}</code></pre>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjEYqXa" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/JjEYqXa"> Learn CSS - Sizing - Relative Units </a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>En este ejemplo, el div será el 10% del ancho de la ventana gráfica, porque 1vw es el 1% del ancho de la ventana gráfica. El elemento p tiene un max-width de 60ch que significa que no puede exceder el ancho de 60 caracteres “0” en la fuente y el tamaño calculados.</p>
+<h1 id="flexbox">4. Flexbox</h1>
+<h2 id="la-propiedad-display">4.1 La propiedad display</h2>
+<p>La propiedad <code>display</code> sirve para dos cosas.<br />
+Una de ellas es determinar si la caja (box) a la que se aplica actua como inline o como bloque.</p>
+<pre class="css"><code>.mi-elemento {
+    display: inline;
+}</code></pre>
+<p>Los elementos <strong>inline</strong> se comportan como palabras en una oración. Se ponen uno al lado del otro en la misma linea. Los elementos como <code>&lt;span&gt;</code> y <code>&lt;strong&gt;</code>, que son tipicamente usados para darle estilo a partes del texto dentro de un elemento padre como un <code>&lt;p&gt;</code> (párrafo), son inline por defecto. También preservan los espacios en blanco.</p>
+<p><img src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/GezxDZXkJgkMevkKg39M.png?auto=format&amp;w=845" /></p>
+<blockquote>
+<p>No se puede setear un ancho o alto (width, height) explicito a los elementos inline. Cualquier margin o padding que se le agregue va a ser ignorado.</p>
+</blockquote>
+<pre class="css"><code>.mi-elemento {
+    display: block;
+}</code></pre>
+<p>Los elementos <code>block</code> no se ponen uno al lado del otro. Se crean en una nueva línea.<br />
+A menos que se modifique por CSS, un elemento block se va a expandir al ancho de la dimensión inline, es decir, todo el ancho de la página.</p>
+<pre class="css"><code>.mi-elemento {
+   display: flex;
+}</code></pre>
+<p>La propiedad <code>display</code> también determina cómo se comportan los elementos hijos del elemento. Por ejemplo, si usamos la <code>display: flex</code> la caja se transforma en una caja a nivel de bloque, y sus hijos en items flex. Lo que permite controlar su alineación, orden y flujo.</p>
+<h2 id="flexbox-en-detalle">4.2 Flexbox en detalle</h2>
+<p>Flexbox es un mecanismo de layout para layouts unidimensionales. Es decir, a lo largo de un solo eje, horizontal o vertical. Por defecto, flexbox alinea los elementos hijos uno al lado del otro, en la dirección inline y los estira (stretch) en la dirección block, para que tengan la misma altura.</p>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="GRwbGQY" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/GRwbGQY"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h3 id="dirección-de-los-items">4.2.1 Dirección de los items</h3>
+<p>Para cambiar la dirección en la que se muestran los elementos hijos de un contenedor con <code>display: flex;</code> se utiliza la propiedad <code>flex-direction</code>. Puede tener los siguientes valores:</p>
+<ul>
+<li>row: los items se muestran en fila (horizontal).</li>
+<li>column: los items se muestran en una columna (vertical)</li>
+<li>row-reverse: los items se muestran en fila con el orden inverso.</li>
+<li>column-reverse: los items se muestran en columna con el orden inverso.</li>
+</ul>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="RwqzJBY" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/RwqzJBY"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h3 id="alineamiento-de-los-items">4.2.2 Alineamiento de los items</h3>
+<p>Hay dos tipos de propiedades flex para alineamiento, unas orientadas a la distribución del espacio y otras al alineamiento. Las propiedades para distribuir el espacio son:</p>
+<p><code>justify-content</code>: distribuye el espacio en el eje principal. <code>align-content</code>: distribuye el espacio en el eje secundario.</p>
+<p>Las propiedades para alinear son: <code>align-self</code>: alinea un único elemento en el eje secundario. <code>align-items</code>: alinea todos los items en el eje secundario.</p>
+<p>Si estás trabajando en el eje principal las propiedades empiezan con <code>justify-</code>. Las del eje secundario empiezan con <code>align-</code></p>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="bGgwLgz" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/bGgwLgz"> Learn CSS - Flexbox - Justify content</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="poREawo" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/poREawo"> Learn CSS - Flexbox - Align content</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h1 id="maquetacion-de-header-y-footer.">5. Maquetacion de header y footer.</h1>
+<p>Ahora veremos una pequeña guía sobre la maquetación de un header y un footer básico utilizando HTML y CSS.</p>
+<h2 id="primer-paso-estructura-de-un-documento-html">5.1 Primer paso: Estructura de un Documento HTML</h2>
+<p>Pueden usar el que entregaron la clase pasada, o pueden crear uno nuevo. Les recordamos que esta es la estructura basica:</p>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Título de la Página&lt;/title&gt;
+    &lt;!-- Enlaces a archivos CSS y más metadatos van aquí --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido de la página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="segundo-paso-creación-del-header">5.2 Segundo paso: Creación del Header</h2>
+<p>Creamos un elemento <code>&lt;header&gt;</code> en el <code>&lt;body&gt;</code> de la página, algunas de las etiquetas que decidimos usar son <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>. Ejemplo de código HTML para el header:</p>
+<pre class="html"><code>&lt;header&gt;
+    &lt;div class=&quot;logo&quot;&gt;Header&lt;/div&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+<h2 id="tercer-paso-creación-del-footer">5.3 Tercer paso: Creación del Footer</h2>
+<p>Creamos un elemento <code>&lt;footer&gt;</code> en el <code>&lt;body&gt;</code> de la página, para este ejemplo solo usaremos un <code>&lt;p&gt;</code></p>
+<pre class="html"><code>&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2023 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+<h2 id="cuarto-paso-estilización">5.4 Cuarto paso: Estilización</h2>
+<p>Lo primero que tenemos que hacer, es crear nuestro archivo de estilos <code>style.css</code> en la misma carpeta donde tenemos nuestro <code>index.html</code></p>
+<h3 id="como-vincular-un-archivo-de-estilos-con-un-documento-html">5.5 Como vincular un archivo de estilos, con un documento HTML</h3>
+<p>Una vez tengamos nuestro archivo <code>style.css</code> creado, deberemos referenciarlo desde <code>index.html</code></p>
+<pre class="html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Título de tu Página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido de la página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><code>&lt;link&gt;</code>: Es un elemento HTML que se utiliza para vincular recursos externos al documento. rel=“stylesheet”: Indica que el recurso es una hoja de estilo. type=“text/css”: Especifica el tipo de recurso que se vinculará. href=“style.css”: Es el atributo que contiene la ruta al archivo style.css</p>
+<h3 id="ejemplo-final-con-css-y-html">5.6 Ejemplo final con CSS y HTML</h3>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ZEmdjYK" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEmdjYK"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</article>
+<footer class="flex flex-row justify-between p-4 border-t
+    border-stone-400"
+>
+    Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez
+</footer>
+</body>
+</html>
