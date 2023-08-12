@@ -1,6 +1,6 @@
 --- 
-title: Clase 4 - Maquetacion y Desarrollo Web I 
-description-meta: Clase 4 
+title: Clase 3 - Maquetacion y Desarrollo Web I 
+description-meta: Clase 3
 author-meta: Maquetacion y Desarrollo Web I
 --- 
 
