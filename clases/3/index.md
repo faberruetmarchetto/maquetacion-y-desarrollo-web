@@ -106,7 +106,7 @@ Si adjunta una unidad a un número, se convierte en una dimensión. Por ejemplo,
 
 Las longitudes son dimensiones que se refieren a la distancia y pueden ser absolutas o relativas.
 
-### Longitudes absolutas
+### 2.2.1 Longitudes absolutas
 
 Todas las longitudes absolutas se resuelven contra la misma base, lo que las hace predecibles dondequiera que se utilicen en su CSS. Por ejemplo, si usa cm para dimensionar su elemento y luego imprime, debería ser exacto si lo compara con una regla.
 
@@ -124,7 +124,7 @@ Las longitudes absolutas pueden resultar útiles a la hora de imprimir.
 |px |Pixeles |1 px = 1/96 de 1 in|
                 
 
-### Longitudes relativas
+### 2.2.2 Longitudes relativas
 
 La longitud relativa se calcula contra un valor base, muy parecido a un porcentaje. La diferencia entre estos y los porcentajes es que puede dimensionar los elementos contextualmente
 
@@ -141,7 +141,7 @@ La longitud relativa se calcula contra un valor base, muy parecido a un porcenta
 
 <img src="https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg"/>
 
-### Longitudes relativas
+### 2.2.3 Longitudes relativas a la ventana gráfica
 
 Puede utilizar las dimensiones de la ventana gráfica (ventana del navegador) como una base relativa. Estas unidades reparten el espacio disponible de la ventana gráfica.
 
