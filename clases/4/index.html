@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../markdown.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <meta name="author" content="Maquetacion y Desarrollo Web I" />
+  <meta name="description" content="Clase 4" />
+  <title>Clase 4 - Maquetacion y Desarrollo Web I</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header style="display: flex; flex-direction: row; justify-content: between;
+    padding: 0.5em; border-bottom: solid 1px #a8a29e;"
+>
+    <div style="display: flex; flex-direction: column; gap: 0.5em; background-color: white;
+        opacity: 0.9;"
+    >
+        <span style="font-family: 'source code pro', monospace; color: #4f46e5;
+            font-size: 1.5rem; line-height: 2rem;"
+        >
+            .maquetacion-y-desarrollo-web{}
+        </span>
+        <span style="font-weight: 400;">
+            &rsaquo; <span style="font-weight: 600;">Clase 4</span>
+        </span>
+    </div>
+</header>
+<article>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">&rsaquo; Indice de contenidos</h2>
+<ul>
+<li><a href="#diseño-responsive">1. Diseño Responsive</a>
+<ul>
+<li><a href="#diseñando-la-mejor-experiencia-para-todos-los-usuarios">1.1 Diseñando la mejor experiencia para todos los usuarios</a></li>
+<li><a href="#el-viewport">1.2 El Viewport</a>
+<ul>
+<li><a href="#que-es-el-viewport">1.2.1 ¿Que es el Viewport?</a></li>
+<li><a href="#estableciendo-nuestro-viewport">1.2.2 Estableciendo nuestro Viewport</a></li>
+<li><a href="#ajustando-el-tamaño-del-contenido-al-viewport">1.2.3 Ajustando el tamaño del contenido al Viewport</a></li>
+<li><a href="#algunas-reglas-adicionales-para-seguir">1.2.4 Algunas reglas adicionales para seguir</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#pseudo-classes">2. Pseudo-classes</a>
+<ul>
+<li><a href="#sintaxis">2.1 Sintaxis</a></li>
+<li><a href="#pseudoclases-mas-comunes">2.2 Pseudoclases mas comunes</a></li>
+<li><a href="#en-resumen">2.3 En resumen</a></li>
+</ul></li>
+<li><a href="#navegación-y-menús-desplegables">3. Navegación y menús desplegables</a></li>
+</ul>
+</nav>
+<h1 id="diseño-responsive">1. Diseño Responsive</h1>
+<p>Cuando hablamos de diseño responsive, nos referimos a diseñar nuestras paginas web de tal forma que se vean bien en todos los dispositivos, sin importar el tamaño o disposicion de las pantallas. El diseño responsive es mas bien una forma de diseñar, no algo que se programa, y se logra mediante nuestro HTML y CSS.</p>
+<h2 id="diseñando-la-mejor-experiencia-para-todos-los-usuarios">1.1 Diseñando la mejor experiencia para todos los usuarios</h2>
+<p>Nuestras paginas web pueden ser visualizadas de muchas maneras: desde una pc de escritorio, desde una notebook, tablets, telefonos, entre otras, y siempre deberia verse bien y ser facil de usar, sin importar el dispositivo donde se encuentre el usuario. Sin embargo, no debemos dejar fuera informacion con tal de adaptarnos a, por ejemplo, la pantalla mas pequeña de un dispositivo movil, en su lugar lo que debemos hacer es adaptar los contenidos de nuestra pagina para que encajen en cualquier tipo de dispositivo.</p>
+<p><img src="images/1.png"
+    style="width: 40em;"
+/></p>
+<p>Cuando mediante el uso de HTML y CSS logramos que nuestros continedos se escondan, encojan, agranden o muevan con tal de verse bien en todos los dispositivos, entonces logramos tener un diseño web responsive</p>
+<h2 id="el-viewport">1.2 El Viewport</h2>
+<h3 id="que-es-el-viewport">1.2.1 ¿Que es el Viewport?</h3>
+<p>El Viewport es el area visible para el usuario de una pagina web. Varia segun cada dispositivo, siendo mas pequeño en dispositivos moviles, por ejemplo. Antes de la proliferacion de los dispositivos moviles, las paginas eran diseñadas pensando unicamente en las pantallas de computadora, siendo comun que tendieran a tener un diseño estatico y un tamaño fijo. Cuando la navegacion movil empezó a volverse comun, dichas paginas de tamaño fijo se volvieron demasiado grandes para caber en los viewports. Para solucionar este problema, los navegadores de dichos dispositivos reducian la pagina web entera para que se viera mejor en la pantalla. No era perfecto, pero funciono como solucion rapida.</p>
+<h3 id="estableciendo-nuestro-viewport">1.2.2 Estableciendo nuestro Viewport</h3>
+<p>con HTML5 se introdujo un metodo que permitio a los diseñadores web tomar control del viewport medienta la etiqueta <code>&lt;meta&gt;</code> Deberiamos incluirlo en nuestras paginas de la siguiente manera:</p>
+<pre class="html"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></pre>
+<p>Esto le da instrucciones al navegador sobre como controlar las dimensiones y el escalado de nuestra pagina. La parte <code>width=device-width</code> se encarga de que el ancho de nuestra pagina siga el ancho de la pantalla (que variara segun el dispositivo) La parte <code>initial-scale=1.0</code> establece que el nivel de zoom que tendra la pagina cuando es cargada por el navegador web</p>
+<p><img src="images/2.png"
+    style="width: 40em;"
+/></p>
+<p><strong>Sin el Viewport en la etiqueta <code>&lt;meta&gt;</code></strong> <strong>/</strong> <strong>Con el Viewport en la etiqueta <code>&lt;meta&gt;</code></strong></p>
+<h3 id="ajustando-el-tamaño-del-contenido-al-viewport">1.2.3 Ajustando el tamaño del contenido al Viewport</h3>
+<p>Los usuarios estan acostumbrados a desplazarse verticalmente tanto en escritorio como en movil, <strong>¡pero no horizontalmente!</strong> Por lo tanto, si es usario es obligado a desplazarse horizontalmente, o a hacer zoom constantemente para recien ver completa la pagina, esto resulta en una experiencia muy pobre con nuestra pagina.</p>
+<h3 id="algunas-reglas-adicionales-para-seguir">1.2.4 Algunas reglas adicionales para seguir</h3>
+<h4 id="no-usar-elementos-grandes-con-un-ancho-fijado"><strong>NO usar elementos grandes con un ancho fijado</strong></h4>
+<p>Por ejemplo, si una imagen se muestra con un ancho mas grande que el del Viewport, esto puede provocar que el viewport se mueva horizontalmente. Siempre recorda ajustar el contenido para que entre dentro del ancho del viewport.</p>
+<h4 id="no-dejar-que-el-contenido-recaiga-en-un-viewport-en-particular-para-renderizarse">NO dejar que el contenido recaiga en un viewport en particular para renderizarse</h4>
+<p>Dado que las dimensiones de la pantalla y anchos de viewport en pixeles varian demsiado entre dispositivos, el renderizado del contenido no deberia recaer <strong>NUNCA</strong> en un viewport puntual.</p>
+<h1 id="pseudo-classes">2. Pseudo-classes</h1>
+<p>Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado. Por ejemplo, :hover aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.</p>
+<pre class="css"><code>div {
+  background-color: blue;
+}
+
+div:hover {
+  background-color: orange;
+}</code></pre>
+<div style=" background-color: blue; color: white; text-align: center; line-height: 100px;" onmouseover="this.style.backgroundColor=&#39;orange&#39;;" onmouseout="this.style.backgroundColor=&#39;blue&#39;;">
+Estilo cuando el usuario haga hover
+</div>
+<p>Otra pseudoclase común es :active, que se aplica cuando el usuario hace clic en un enlace o un elemento activable. Esto permite proporcionar retroalimentación visual en el momento en que se realiza una acción, como cambiar el color de un botón al hacer clic.</p>
+<p>Además, las pseudoclases también pueden utilizarse para seleccionar elementos específicos dentro de un contexto particular. Por ejemplo, :first-child selecciona el primer elemento hijo de su padre, lo que permite aplicar estilos únicos a ese elemento. :nth-child(n) permite seleccionar elementos en función de su posición en relación con sus hermanos, lo que proporciona un gran control para la presentación de elementos en una lista.</p>
+<h2 id="sintaxis">2.1 Sintaxis</h2>
+<p>Las pseudoclases son precedidas por un dos-puntos (:)</p>
+<pre><code>selector:pseudoclase { propiedad: valor; }</code></pre>
+<p>Al igual que las clases, se pueden concatenar la cantidad de pseudoclases que se deseen en un selector.</p>
+<h2 id="pseudoclases-mas-comunes">2.2 Pseudoclases mas comunes</h2>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pseudoclase</th>
+<th style="text-align: right;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>:hover</code></td>
+<td style="text-align: right;">Aplica estilos cuando el cursor del mouse está sobre el elemento.</td>
+</tr>
+<tr class="even">
+<td><code>:active</code></td>
+<td style="text-align: right;">Aplica estilos cuando el elemento está siendo activado, como al hacer clic en un enlace.</td>
+</tr>
+<tr class="odd">
+<td><code>:focus</code></td>
+<td style="text-align: right;">Aplica estilos cuando el elemento obtiene el foco, como al hacer clic en un campo de entrada.</td>
+</tr>
+<tr class="even">
+<td><code>:nth-child(n)</code></td>
+<td style="text-align: right;">Selecciona el elemento que es el enésimo hijo de su padre.</td>
+</tr>
+<tr class="odd">
+<td><code>:first-child</code></td>
+<td style="text-align: right;">Selecciona el primer hijo de su padre.</td>
+</tr>
+<tr class="even">
+<td><code>:last-child</code></td>
+<td style="text-align: right;">Selecciona el último hijo de su padre.</td>
+</tr>
+<tr class="odd">
+<td><code>:nth-of-type(n)</code></td>
+<td style="text-align: right;">Selecciona el enésimo elemento de un tipo específico dentro de su padre.</td>
+</tr>
+<tr class="even">
+<td><code>:first-of-type</code></td>
+<td style="text-align: right;">Selecciona el primer elemento de un tipo específico dentro de su padre.</td>
+</tr>
+<tr class="odd">
+<td><code>:last-of-type</code></td>
+<td style="text-align: right;">Selecciona el último elemento de un tipo específico dentro de su padre.</td>
+</tr>
+<tr class="even">
+<td><code>:not(selector)</code></td>
+<td style="text-align: right;">Selecciona elementos que no coinciden con el selector dado.</td>
+</tr>
+<tr class="odd">
+<td><code>:checked</code></td>
+<td style="text-align: right;">Selecciona elementos de entrada (como casillas de verificación) que están marcados.</td>
+</tr>
+<tr class="even">
+<td><code>:disabled</code></td>
+<td style="text-align: right;">Selecciona elementos de entrada deshabilitados.</td>
+</tr>
+<tr class="odd">
+<td><code>:enabled</code></td>
+<td style="text-align: right;">Selecciona elementos de entrada habilitados.</td>
+</tr>
+<tr class="even">
+<td><code>:visited</code></td>
+<td style="text-align: right;">Selecciona enlaces que ya han sido visitados.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="en-resumen">2.3 En resumen</h2>
+<p>Las pseudoclases son una herramienta poderosa para agregar interactividad y estilo a las páginas web. Permiten la creación de efectos visuales dinámicos y la adaptación de la presentación de los elementos según el contexto y la interacción del usuario. Sin embargo, es importante usarlas con moderación y seguir buenas prácticas de organización de código para mantener un CSS limpio y fácil de mantener.</p>
+<h1 id="navegación-y-menús-desplegables">3. Navegación y menús desplegables</h1>
+<p>La navegación en el contexto de una página web hace referencia al acceso a diferentes partes de un sitio (o sitios externos) mediante el uso de links (<code>&lt;a&gt;</code>). Frecuentemente, se acostumbra a tener componentes de navegación en una página que abarcan la parte superior de la misma (llamadas topbar), otras que abarcan la parte lateral (llamadas sidebar) o incluso elementos en el footer de la pagina que redireccionan a por ejemplo, información de contacto de los creadores/empresa.</p>
+<p>La estructura HTML típica de un elemento de navegación es la siguiente:</p>
+<pre class="html"><code>&lt;nav&gt;
+  &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; 
+  &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; 
+  &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; 
+&lt;/nav&gt;</code></pre>
+<p>El tag HTML <code>&lt;nav&gt;</code> define un conjunto de links de navegación en su interior, mientras que los <code>&lt;a&gt;</code> son links hacia otras páginas.</p>
+<p>Con esta misma estructura previamente hemos podido realizar un ejemplo de header para una pagina web. Ahora haremos un menu desplegable con un boton, donde al poner el mouse sobre dicho botón, se nos desplegarán los links disponibles asociados a ese menú.</p>
+<pre class="html"><code>&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;button class=&quot;btn&quot;&gt;
+    Mi perfil
+  &lt;/button&gt;
+  &lt;div class=&quot;dropdown-options&quot;&gt;
+    &lt;a class=&quot;drop-item&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;
+    &lt;a class=&quot;drop-item&quot; href=&quot;#&quot;&gt;Configuracion&lt;/a&gt;
+    &lt;a class=&quot;drop-item&quot; href=&quot;#&quot;&gt;Salir&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Las clases CSS necesarias para crear el efecto de despliegue son <code>dropdown</code> y <code>dropdown-options</code>. El resto son meramente estéticos.</p>
+<pre class="css"><code>.dropdown {
+  position: relative;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: none;
+}
+
+.dropdown:hover .dropdown-options {
+  display: flex;
+  flex-direction: column;
+}</code></pre>
+<p>La clase<code>.dropdown-options</code> que tiene el menu que se va a desplegar, tiene por defecto <code>display: none</code> lo que significa que esta oculto. Con la ultima regla css lo que decimos es que cuando el <code>div</code> que contiene todo sea accionado por un evento <code>hover</code> (es decir, que se ponga el mouse encima) entonces el <code>display</code> pase a ser <code>display: flex</code> y por lo tanto se haga visible. Como detalle lo pusimos como <code>flex-direction: column</code> para que se muestren verticalmente. El “truco” esta en que la clase dropdown que representa al contenedor principal tiene <code>position: relative</code> mientras que el contenedor de los links tiene <code>position: absolute</code>, por ende cuando se hace un <code>hover</code> al botón se muestra el contenido debajo del botón.</p>
+<p>El ejemplo completo queda de esta forma:</p>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="MWZWVNJ" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/MWZWVNJ"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<blockquote>
+<p>Nótese que hay mas clases de css para los estilos como <code>btn</code> y <code>drop-item</code>, les recomendamos explorarlos y quitarlos para ver su efecto y entender los estilos aplicados.</p>
+</blockquote>
+</article>
+<footer class="flex flex-row justify-between p-4 border-t
+    border-stone-400"
+>
+    Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez
+</footer>
+</body>
+</html>
