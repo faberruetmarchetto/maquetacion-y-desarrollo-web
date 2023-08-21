@@ -312,7 +312,7 @@ Creamos un elemento `<footer>` en el `<body>` de la página, para este ejemplo s
 
 Lo primero que tenemos que hacer, es crear nuestro archivo de estilos `style.css` en la misma carpeta donde tenemos nuestro `index.html`
 
-### 4.5 Como vincular un archivo de estilos, con un documento HTML
+## 4.5 Como vincular un archivo de estilos, con un documento HTML
 
 Una vez tengamos nuestro archivo `style.css` creado, deberemos referenciarlo desde  `index.html`
 
@@ -334,7 +334,7 @@ rel="stylesheet": Indica que el recurso es una hoja de estilo.
 type="text/css": Especifica el tipo de recurso que se vinculará.
 href="style.css": Es el atributo que contiene la ruta al archivo style.css
 
-### 4.6 Ejemplo final con CSS y HTML 
+## 4.6 Ejemplo final con CSS y HTML 
 
 <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ZEmdjYK" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEmdjYK">
