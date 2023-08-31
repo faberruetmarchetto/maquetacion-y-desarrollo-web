@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../markdown.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <meta name="author" content="Maquetacion y Desarrollo Web I" />
+  <meta name="description" content="Clase 5" />
+  <title>Clase 5 - Maquetacion y Desarrollo Web I</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header style="display: flex; flex-direction: row; justify-content: between;
+    padding: 0.5em; border-bottom: solid 1px #a8a29e;"
+>
+    <div style="display: flex; flex-direction: column; gap: 0.5em; background-color: white;
+        opacity: 0.9;"
+    >
+        <span style="font-family: 'source code pro', monospace; color: #4f46e5;
+            font-size: 1.5rem; line-height: 2rem;"
+        >
+            .maquetacion-y-desarrollo-web{}
+        </span>
+        <span style="font-weight: 400;">
+            &rsaquo; <span style="font-weight: 600;">Clase 5</span>
+        </span>
+    </div>
+</header>
+<article>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">&rsaquo; Indice de contenidos</h2>
+<ul>
+<li><a href="#slideshow">1. Slideshow</a>
+<ul>
+<li><a href="#slider-básico">1.1 Slider básico</a></li>
+<li><a href="#links-de-navegación">1.2 Links de navegación</a></li>
+</ul></li>
+<li><a href="#transiciones">2. Transiciones</a>
+<ul>
+<li><a href="#lo-básico">2.1 Lo básico</a></li>
+<li><a href="#propiedades-de-una-transición">2.2 Propiedades de una Transición</a></li>
+<li><a href="#duración-una-transición">2.3 Duración una transición</a></li>
+<li><a href="#retraso-de-una-transición">2.4 Retraso de una transición</a></li>
+<li><a href="#un-atajo-útil">2.5 Un atajo útil</a></li>
+<li><a href="#transformaciones">2.6 Transformaciones</a></li>
+<li><a href="#colores">2.7 Colores</a></li>
+<li><a href="#sombras">2.8 Sombras</a></li>
+<li><a href="#triggers-de-transición">2.9 Triggers de transición</a></li>
+<li><a href="#consideraciones-sobre-el-rendimiento-de-nuestra-página">2.10 Consideraciones sobre el rendimiento de nuestra página</a></li>
+</ul></li>
+<li><a href="#estilos-de-texto">3. Estilos de texto</a>
+<ul>
+<li><a href="#font-family">3.1 font-family</a></li>
+<li><a href="#font-style">3.2 font-style</a></li>
+<li><a href="#font-weight">3.3 font-weight</a></li>
+<li><a href="#font-size">3.4 font-size</a></li>
+</ul></li>
+<li><a href="#imágenes">4 Imágenes</a>
+<ul>
+<li><a href="#tamaño-de-las-imágenes">4.1 Tamaño de las imágenes</a>
+<ul>
+<li><a href="#qué-podemos-hacer-con-el-problema-del-desbordado">4.1.1 Qué podemos hacer con el problema del desbordado?</a></li>
+</ul></li>
+<li><a href="#cómo-poner-una-imagen-de-fondo">4.2 Cómo poner una imagen de fondo</a>
+<ul>
+<li><a href="#ejemplo-6">4.2.1 Ejemplo</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="slideshow">1. Slideshow</h1>
+<p>Un slideshow o slider, también conocido como carrusel se refiere a un grupo de elementos en fila sobre los que se puede navegar, como una especie de diapositiva.</p>
+<h2 id="slider-básico">1.1 Slider básico</h2>
+<p>Podemos crear un slider utilizando la siguiente estructura HTML.</p>
+<pre class="html"><code>&lt;div class=&quot;slider&quot;&gt;
+  &lt;div class=&quot;slide&quot; id=&quot;slide-1&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;slide&quot; id=&quot;slide-2&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;slide&quot; id=&quot;slide-3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;slide&quot; id=&quot;slide-4&quot;&gt;4&lt;/div&gt;
+  &lt;div class=&quot;slide&quot; id=&quot;slide-5&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Ahora con css vamos a hacer que se pongan en fila y que se puedan scrollear.</p>
+<pre class="css"><code>/* clase del contenedor principal */
+.slider {
+  width: 20em;
+  height: 20em;
+  display: flex;
+  overflow-x: auto;
+}
+
+/* clase para cada slide individual*/
+.slide {
+  width: 20em;
+  flex-shrink: 0;
+  height: 100%;
+}</code></pre>
+<p>Con esto ya cumplimos dicho requerimiento.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvRWJqy" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/wvRWJqy"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="links-de-navegación">1.2 Links de navegación</h2>
+<p>Ahora si queremos agregar links para navegar entre slides, necesitamos incorporar elementos <code>&lt;a&gt;</code> que pongan foco en cada elemento.</p>
+<pre class="html"><code>&lt;div class=&quot;slide-wrap&quot;&gt;
+ 
+  &lt;a href=&quot;#slide-1&quot;&gt;1&lt;/a&gt;
+  &lt;a href=&quot;#slide-2&quot;&gt;2&lt;/a&gt;
+  &lt;a href=&quot;#slide-3&quot;&gt;3&lt;/a&gt;
+  &lt;a href=&quot;#slide-4&quot;&gt;4&lt;/a&gt;
+  &lt;a href=&quot;#slide-5&quot;&gt;5&lt;/a&gt;
+
+  &lt;div class=&quot;slider&quot;&gt;
+    &lt;div class=&quot;slide&quot; id=&quot;slide-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;slide&quot; id=&quot;slide-2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;slide&quot; id=&quot;slide-3&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;slide&quot; id=&quot;slide-4&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;slide&quot; id=&quot;slide-5&quot;&gt;5&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+<p>Ahora que tenemos esto listo, vamos a darle un poco de estilo a los botones para que nos quede una mejor presentación.</p>
+<pre class="css"><code>/* clase para el contenedor padre */
+.slide-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.slider {
+  width: 20em;
+  height: 20em;
+  display: flex;
+  overflow-x: auto;
+}
+
+/* clase para cada slide individual */
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+ 
+  /* estilos de ejemplo */
+  background: gray;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+
+
+/* clase para el elemento que encierra los links de navegación */
+.slide-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20em;
+  font-weight: bold;
+  gap: 0.5em;
+}
+
+/* estilo de los  links de navegación */
+.slide-nav &gt; a {
+  color: black;
+  text-decoration: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border: solid 1px #d4d4d4;
+  border-radius: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em;
+  font-size: 0.8rem;
+}
+
+.slide-nav &gt; a:hover {
+  background-color: #f5f5f5;
+}
+
+body {
+  font-family: sans;
+  background-color: #fafafa;
+}</code></pre>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ZEVOePz" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEVOePz"> Slider con navegacion</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h1 id="transiciones">2. Transiciones</h1>
+<p>Cuando interactuamos con una página web podemos observar que ciertos elementos poseen ciertos estados. Por ejemplo, los botones pueden cambiar de color cuando el mouse les pasa por encima (el evento hoover, que ya vimos en la clase anterior) Las transiciones se ocupan del cambio entre ambos estados del elemento un elemento, definen como sera el comportamiento de dicho cambio, si será gradual, si tardará mas o menos tiempo, si se producira al instante o con un retraso, etc.</p>
+<h2 id="lo-básico">2.1 Lo básico</h2>
+<p>Por defecto, CSS cambia el estilo de los estados de forma instantanea, es decir, no hay transición en el medio. Haciendo uso de las transiciones, podemos interporlar entre ambos estados del elemento, el inicial y el objetivo, brindandole al usuario de nuestra página una mejor experiencia visual al momento del uso.</p>
+<h4 id="ejemplo">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYzNrJV" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/zYzNrJV"> Learn CSS: Transitions - instant vs transitioned (no button)</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Para utilizar transiciones en nuestro CSS hay varias propiedades que podemos modificar. A continuación veremos algunas.</p>
+<h2 id="propiedades-de-una-transición">2.2 Propiedades de una Transición</h2>
+<p>Con <code>transition-property</code> especificamos que estilo/s van a realizar la transición. Acepta como parametros a una o mas propiedades CSS separadas por comas.</p>
+<h4 id="ejemplo-de-sintaxis">ejemplo de sintaxis</h4>
+<pre class="css"><code>.mi-elemento {
+  transition-property: background-color;
+}</code></pre>
+<h4 id="ejemplo-en-funcionamiento">ejemplo en funcionamiento</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="VwWPeEj" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/VwWPeEj"> Learn CSS: Transitions - transition-property</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="duración-una-transición">2.3 Duración una transición</h2>
+<p>La propiedad <code>transition-duration</code> es usada para definir el tiempo que tarada una transición en completarse. Acepta como parametro <strong>unidades de tiempo</strong>, ya sea en segundos (s) o milisegundos (ms). Por defecto siempre es <strong>0s</strong> (transición instantea)</p>
+<h4 id="ejemplo-1">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvegMYp" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/wvegMYp"> Learn CSS: Transitions - transition-duration</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="retraso-de-una-transición">2.4 Retraso de una transición</h2>
+<p>Con <code>transition-delay</code> especificamos el tiempo que nuestra transición tardara en empezar a producirse. Si no lo especificamos, las transiciónes comienzan de forma instantea ya que el valor por defecto es <strong>0s</strong>. Esta propiedad acepta los mismos parametros que la anterior, <strong>unidades de tiempo</strong>.</p>
+<h4 id="ejemplo-2">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="jOwyWep" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/jOwyWep"> Learn CSS: Transitions - transition-delay</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Esto puede servirnos para escalonar / encadenar transiciones, efecto que podriamos lograr estableciendo diferentes tiempos de retraso para cada transición, con cada trasición posterior teniendo un tiempo de retraso mayor a la anterior.</p>
+<h4 id="ejemplo-3">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLXgeRQ" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/yLXgeRQ"> Learn CSS: Transitions - transition-delay staggered</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="un-atajo-útil">2.5 Un atajo útil</h2>
+<p>Como la mayoria de las propiedades de CSS, hay una version acortada, o un “atajo”. En este caso es <code>transition</code>, que agrupa a <code>transition-property</code>, <code>transition-duration</code> y <code>transition-delay</code>, entre otras.</p>
+<h4 id="ejemplo-de-sintaxis-1">ejemplo de sintaxis</h4>
+<pre class="css"><code>.version-larga {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-delay: 0s;
+}
+
+.version-corta {
+  transition: transform 300ms 0s;
+}</code></pre>
+<h2 id="transformaciones">2.6 Transformaciones</h2>
+<p>La propiedad <code>transform</code> nos permite escalar, rotar o transladar un elemento de forma arbitraria, y nos permite obtener animaciones mas suaves y atractivas a la vista.</p>
+<h4 id="ejemplo-4">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRErowE" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/GRErowE"> Learn CSS: Transitions - transform</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="colores">2.7 Colores</h2>
+<p>Antes, durante y despues de una interacción, el color tambien puede servirnos como indicador del estado de nuestro elemento. El ejemplo mas simple es un boton que cambia de color con un evento <strong>hoover</strong>, esto es muy util para darle feedback al usuario. Las propiedades <code>color</code>, <code>background-color</code> y <code>border-color</code> son solo algunas de las propiedades donde el color puede ser transicionado en una interacción.</p>
+<h2 id="sombras">2.8 Sombras</h2>
+<p>Usualmente se las transiciona para producir un cambio en la elevación, indicando, por ejemplo, el focus del usuario.</p>
+<h4 id="ejemplo-5">ejemplo</h4>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gORgPQx" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/gORgPQx"> Learn CSS: Transitions - shadow (elevation)</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="triggers-de-transición">2.9 Triggers de transición</h2>
+<p>Como ya mencionamos, nuestro CSS debe incluir un cambio de estado y un evento que dispare (trigger) dicho cambio para que nuestra transición se active. El ejemplo mas sencillo es el que mencionamos anteriormente, <code>:hover</code>, que se dispara cuando el usuario pone el mouse encima del elemento.</p>
+<h4 id="algunos-ejemplos-mas">algunos ejemplos mas</h4>
+<p><code>:hover</code> –&gt; se activa si el cursor esta sobre el elemento. (por ejemplo: nuestro mouse pasa por sobre un boton)</p>
+<p><code>:focus</code> –&gt; se activa si el elemento se encuentra en foco. (ejemplo: un interruptor es presionado y queda en foco)</p>
+<p><code>:active</code> –&gt; se activa cuando el elemento es, valga la redundancia, activado. (por ejemplo: un boton esta siendo presionado por el usuario)</p>
+<h2 id="consideraciones-sobre-el-rendimiento-de-nuestra-página">2.10 Consideraciones sobre el rendimiento de nuestra página</h2>
+<p>A veces cuando trabajamos con transiciones de CSS podemos llegar a ver problemas de rendimiento con ciertas propiedades. Por ejemplo, cuando propiedades como <code>width</code> o <code>height</code> cambian, empujan el contenido a su al rededor por el resto de la pagina. Esto fuerza a CSS a calcular nuevas posiciones para cada elemento afectado por el desplazamiento en cada frame de la transición. Debido a esto, cuando sea posible, es recomendable usar propiedades como <code>transform</code> y <code>opacity</code> en su lugar.</p>
+<h1 id="estilos-de-texto">3. Estilos de texto</h1>
+<h2 id="font-family">3.1 font-family</h2>
+<p>Se puede usar la regla <code>font-family</code> para cambiar el tipo de fuente del texto.</p>
+<p>Por ejemplo, de esta forma podemos utilizar una <code>font-family</code> de tipo <code>sans-serif</code>.</p>
+<pre class="css"><code>.ff-sans-serif {
+  font-family: sans-serif;
+}</code></pre>
+<p>A continuación un ejemplo de varios tipos de font-family distintos y sus posibles combinaciones.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLojraG" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/yLojraG"> Text | font-family</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="font-style">3.2 font-style</h2>
+<p>También se puede cambiar el texto en italica, normal y cursiva, con la propiedad <code>font-style</code></p>
+<p>Para poner texto en itálica se utiliza</p>
+<pre class="css"><code>.italic {
+  font-style: italic;
+}</code></pre>
+<p>Ejemplo de los tipos de font-style:</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWvGRjx" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/MWvGRjx"> Text | font-style</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="font-weight">3.3 font-weight</h2>
+<p>Para poner texto en negrita, o en una variante mas “ligera” se puede utilizar la propiedad <code>font-weight</code>.</p>
+<p>Para poner el texto en negrita se utiliza</p>
+<pre class="css"><code>.fw-bold {
+  font-weight: bold;
+}</code></pre>
+<p>También se pueden poner en escalas del 100 al 900 de más finita a más gruesa.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gOxKxNz" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/gOxKxNz"> Text | font-weight numbers</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="font-size">3.4 font-size</h2>
+<p>Para cambiar el tamaño del texto de se utiliza la propiedad <code>font-size</code>. Algunos de los valores absolutos son: <code>xx-small</code>, <code>x-small</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>x-large</code>, <code>xx-large</code>.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="eYEroda" data-editable="true" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/eYEroda"> Text | font-size keywords v2</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>También es posible poner valores en <code>rem</code>, <code>em</code> y <code>px</code> para <code>font-size</code>.</p>
+<blockquote>
+<p>¿Cuál es la diferencia entre <code>em</code> y <code>rem</code>? Respuesta: En CSS, <code>em</code> representa el <code>font-size</code> heredado del elemento padre. Por ejemplo, <code>font-size: 2em</code> equivale a el <code>font-size</code> del padre multiplicado por dos. rem es similar, pero representa el <code>font-size</code> del elemento raíz (root), es decir <code>&lt;html&gt;</code>.</p>
+</blockquote>
+<p>Existen muchas posibilidades en cuanto a texto en CSS, para aprender mas sobre este tema recomendamos la lectura de https://web.dev/learn/css/typography.</p>
+<h1 id="imágenes">4 Imágenes</h1>
+<p>vamos a ver cómo se tratan ciertos elementos especiales en CSS. Las imágenes y los vídeos se describen como elementos de reemplazo. Esto significa que el CSS no puede intervenir en aspectos del diseño interno de estos elementos, sino solo a su posición en la página y algunos otros aspectos. Sin embargo, como veremos, hay varias cosas que el CSS puede hacer con una imagen.</p>
+<h2 id="tamaño-de-las-imágenes">4.1 Tamaño de las imágenes</h2>
+<p>Todo en CSS genera una caja. Si colocas una imagen dentro de una caja que es más pequeña o más grande que las dimensiones intrínsecas del archivo de imagen en cualquier dirección, aparecerá más pequeño que la caja o se desbordará. Debes decidir qué hacer con el desbordamiento.</p>
+<p>En el ejemplo siguiente hay dos cajas, ambas de 200 píxeles de tamaño. Una es mas pequeña y no se expande, y la otra es mas grande y desborda</p>
+<iframe width="100%" height="1000" src="https://mdn.github.io/css-examples/learn/images/size.html" loading="lazy">
+</iframe>
+<h3 id="qué-podemos-hacer-con-el-problema-del-desbordado">4.1.1 Qué podemos hacer con el problema del desbordado?</h3>
+<p>una técnica común es hacer que el la propiedad max-width de una imagen sea 100%. Esto permite que la imagen tenga un tamaño menor que la caja.</p>
+<p>Si añaden max-width: 100% al elemento img del ejemplo anterior. La imagen más grande se reduce hasta caber en la caja.</p>
+<p>Puedes tomar otras decisiones sobre las imágenes dentro de los contenedores. Por ejemplo, es posible que desees cambiar el tamaño de una imagen para que cubra una caja por completo.</p>
+<p>La propiedad object-fit puede ser de gran ayuda. Cuando se usa object-fit, el elemento de reemplazo puede dimensionarse para adaptarse a una caja de varias maneras.</p>
+<p class="codepen" data-height="300" data-default-tab="html" data-slug-hash="zYyBZzg" data-user="FRANCISCO-ANDRES-BERRUET-MARCHETTO" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/FRANCISCO-ANDRES-BERRUET-MARCHETTO/pen/zYyBZzg"> Untitled</a> by FRANCISCO ANDRES BERRUET MARCHETTO (<a href="https://codepen.io/FRANCISCO-ANDRES-BERRUET-MARCHETTO"><span class="citation" data-cites="FRANCISCO-ANDRES-BERRUET-MARCHETTO">@FRANCISCO-ANDRES-BERRUET-MARCHETTO</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="cómo-poner-una-imagen-de-fondo">4.2 Cómo poner una imagen de fondo</h2>
+<p>La propiedad CSS background-image establece una o más imágenes de fondo para un elemento.</p>
+<p>Las imágenes de fondo se dibujan apilando capas de contexto una encima de la otra. La primera capa especificada se dibuja como si estuviera más cerca del usuario.</p>
+<p>Cada imagen de fondo se especifica como la palabra clave none o como un valor image.</p>
+<p>Para especificar varias imágenes de fondo, proporcione varios valores, separados por una coma</p>
+<h3 id="ejemplo-6">4.2.1 Ejemplo</h3>
+<pre class="html"><code>&lt;div&gt;
+  &lt;p class=&quot;catsandstars&quot;&gt;Este párrafo está lleno de gatos&lt;br /&gt;y estrellas.&lt;/p&gt;
+  &lt;p&gt;Este párrafo no.&lt;/p&gt;
+  &lt;p class=&quot;catsandstars&quot;&gt;Aquí hay más gatos para ti.&lt;br /&gt;¡Míralos!&lt;/p&gt;
+  &lt;p&gt;Y no mas.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<pre class="css"><code>p {
+  font-size: 1.5em;
+  color: #fe7f88;
+  background-image: none;
+  background-color: transparent;
+}
+
+div {
+  background-image: url(&quot;mdn_logo_only_color.png&quot;);
+}
+
+.catsandstars {
+  background-image: url(&quot;startransparent.gif&quot;), url(&quot;catfront.png&quot;);
+  background-color: transparent;
+} </code></pre>
+<p><a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image">Resultado aca</a></p>
+</article>
+<footer class="flex flex-row justify-between p-4 border-t
+    border-stone-400"
+>
+    Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez
+</footer>
+</body>
+</html>
