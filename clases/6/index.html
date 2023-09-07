@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../markdown.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <meta name="author" content="Maquetacion y Desarrollo Web I" />
+  <meta name="description" content="Clase 6" />
+  <title>Clase 6 - Maquetacion y Desarrollo Web I</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header style="display: flex; flex-direction: row; justify-content: between;
+    padding: 0.5em; border-bottom: solid 1px #a8a29e;"
+>
+    <div style="display: flex; flex-direction: column; gap: 0.5em; background-color: white;
+        opacity: 0.9;"
+    >
+        <span style="font-family: 'source code pro', monospace; color: #4f46e5;
+            font-size: 1.5rem; line-height: 2rem;"
+        >
+            .maquetacion-y-desarrollo-web{}
+        </span>
+        <span style="font-weight: 400;">
+            &rsaquo; <span style="font-weight: 600;">Clase 6</span>
+        </span>
+    </div>
+</header>
+<article>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">&rsaquo; Indice de contenidos</h2>
+<ul>
+<li><a href="#popups">1. Popups</a></li>
+<li><a href="#dialog">2. Dialog</a>
+<ul>
+<li><a href="#modal-dialog">2.1 Modal dialog</a></li>
+<li><a href="#no-modal-dialog">2.2 No-modal dialog</a></li>
+</ul></li>
+<li><a href="#el-objeto-window">3. El objeto Window</a>
+<ul>
+<li><a href="#alert-box">3.1 Alert Box</a></li>
+<li><a href="#confirm-box">3.2 Confirm Box</a></li>
+<li><a href="#prompt-box">3.3 Prompt Box</a>
+<ul>
+<li><a href="#saltos-de-línea">3.4 Saltos de línea</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="popups">1. Popups</h1>
+<p>Un Popup (ventana emergente), que proviene de la expresión en inglés “Pop Up”, que significa “emerger”, es como el nombre sugiere, una ventana emergente. Podemos utilizarlas para interactuar con los usuarios de nuestra página de varias maneras.</p>
+<p>Los popups se pueden usar para mostrar:</p>
+<ul>
+<li>Notificaciones</li>
+<li>Publicidades</li>
+<li>Mensajes de error o de éxito</li>
+<li>Formularios</li>
+<li>Encuestas</li>
+</ul>
+<p>Entre otros.</p>
+<h1 id="dialog">2. Dialog</h1>
+<p>El elemento <code>&lt;dialog&gt;</code> es un tipo especial de pop-up en una pagina web: un pop-up que interrumpe el foco del usuario para enfocarse en si mismo. Hay algunos <a href="https://www.nngroup.com/articles/modal-nonmodal-dialog/">casos de uso validos para utilizarlos</a>, pero se debe tomar en consideracion cuando es adecuado hacerlo.</p>
+<p>Los dialogs pueden ser de tipo <strong>modal</strong> (solo se puede interactuar con el contenido dentro del dialog) o <strong>no-modal</strong> (es posible interactuar con el contenido que esta fuera del dialog).</p>
+<h2 id="modal-dialog">2.1 Modal dialog</h2>
+<p>A continuacion se muestra un ejemplo de un modal <code>&lt;dialog&gt;</code>.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zYyNWaw" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/zYyNWaw"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Ahora explicaremos en detalle como se logra esto. En primer lugar, notemos que tenemos un elemento principal, que es el <code>&lt;dialog&gt;</code> Dentro del dialog tenemos dos <code>&lt;div&gt;</code>, uno que es la parte superior que contiene el boton para cerrar el pop-up y otro que contiene el contenido propio del pop-up.</p>
+<pre class="html"><code>&lt;dialog id=&quot;dialog&quot; class=&quot;dialog&quot;&gt;
+  &lt;!-- parte superior --&gt;
+  &lt;div
+       class=&quot;flex flex-row items-center justify-end 
+              border-b-gray w-full p-1em&quot;
+       &gt;
+    &lt;button id=&quot;closeBtn&quot;
+            class=&quot;button-close hover:bg-gray cursor-pointer&quot;
+            &gt;
+      &amp;times;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;!-- contenido del popup --&gt;
+  &lt;div class=&quot;popup-content&quot;&gt;
+    Gracias por escuchar este album en Spotify!
+    &lt;img src=&quot;https://i.scdn.co/image/ab67616d0000b273ae6d8e36136353d550b2587d&quot;
+         alt=&quot;Album&quot;
+         style=&quot;width: 10em;&quot;
+         /&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</code></pre>
+<p>Luego tenemos un boton con <code>id="modal"</code>, que sera el encargado de abrir el pop-up.</p>
+<pre class="html"><code>&lt;button id=&quot;openBtn&quot;
+        class=&quot;button-open&quot;
+        &gt;
+  Abrir
+&lt;/button&gt;</code></pre>
+<p>En la siguiente parte tendremos un tag llamado <code>&lt;script&gt;</code>, que sirve para insertar JavaScript a nuestra pagina. JavaScript nos permite agregar interactividad a la pagina web, en este caso, lo utilizaremos para abrir y cerrar el pop-up.</p>
+<blockquote>
+<p>Es importante que el tag <code>script</code> se encuentre al final del body, para que carguen los elementos que vamos a utilizar antes de la ejecucion del mismo.</p>
+</blockquote>
+<pre class="js"><code>  // Inicializacion de variables (elementos HTML)
+  const dialog = document.getElementById(&#39;dialog&#39;);
+  const closeBtn = document.getElementById(&#39;closeBtn&#39;);
+  const modal = document.getElementById(&#39;openBtn&#39;);
+
+  // Hacemos que al hacer click en `openBtn` se muestre el modal
+  openBtn.addEventListener(&#39;click&#39;, (event) =&gt; {
+    dialog.showModal();
+  });
+
+  // Hacemos que al hacer click en `closeBtn` se cierre el modal
+  closeBtn.addEventListener(&#39;click&#39;, (event) =&gt; {
+    dialog.close();
+  });</code></pre>
+<p>Vamos a analizar parte por parte. Primero realizamos una inicializacion de variables para obtener los elementos HTML que van a interactuar por <code>id</code>. Notese que los <code>id</code> son los mismos que definimos en HTML con <code>id="&lt;id-elemento&gt;"</code>.</p>
+<p>Luego hacemos uso de la funcion <code>addEventListener</code> que toma como primer parametro el nombre del evento (en este caso <code>click</code>) y como segundo parametro la funcion que se ejecutara cuando ocurra este evento.</p>
+<p>Para que se muestre el pop-up en modo modal utilizamos <code>dialog.showModal()</code>.</p>
+<p>Para que se cierre el pop-up utilizamos <code>dialog.close()</code></p>
+<blockquote>
+<p>Los eventos son las interacciones que se realizan con los elementos HTML, por ejemplo el click.</p>
+</blockquote>
+<p>Para aprender mas sobre eventos en JavaScript les recomendamos el <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events">siguiente material</a>.</p>
+<p>Con esto ya logramos programar la interactividad de la pagina, utilizando el evento click, cada vez que clickeemos el boton ‘Abrir’ se abrira el popup, y al clickear el boton de cerrar, se cerrara el mismo.</p>
+<p>Como referencia dejamos el CSS utilizado para este ejemplo:</p>
+<pre class="css"><code>* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.border-b-gray {
+    border-bottom: solid 1px gray;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.p-1em {
+    padding: 1em;
+}
+
+.hover\:bg-gray:hover {
+    color: gray;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.button-open {
+    background-color: #2563eb;
+    padding: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+.button-open:hover {
+    background-color: #1d4ed8;
+}
+
+.popup-content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.button-close {
+    background: none; 
+    font-size: 1.2rem; 
+    border: 0;
+}
+
+.dialog {
+    padding: 0;
+    border: solid 1px gray;
+    border-radius: 0.5em;
+}</code></pre>
+<h2 id="no-modal-dialog">2.2 No-modal dialog</h2>
+<p>El dialogo no-modal se diferencia en que no bloquea el resto de la pagina, como el modal. Para lograr el efecto solo hay que modificar el JavaScript que abre el modal, utilizando la funcion <code>show()</code> en lugar de <code>showModal()</code>.</p>
+<pre class="js"><code>  openBtn.addEventListener(&#39;click&#39;, (event) =&gt; {
+    dialog.show();
+  });</code></pre>
+<h1 id="el-objeto-window">3. El objeto Window</h1>
+<p>El objeto Window (Ventana, en español) es un objeto soportado por todos los navegadores en sus versiones más modernas. Representa a la ventana del navegador. Este objeto contiene varios métodos, varios de los cuales usaremos a continuación.</p>
+<h2 id="alert-box">3.1 Alert Box</h2>
+<p>Las alert box (o cajas de alerta, en español), nos permiten asegurarnos de que la información que pongamos en ellas le llegue al usuario. Cuando una Alert Box aparece en pantalla el usuario deberá hacer click en “Ok” para continuar.</p>
+<h4 id="sintaxis"><strong>Sintaxis</strong></h4>
+<pre class="js"><code>window.alert(&quot;Esto es una alerta!&quot;);</code></pre>
+<blockquote>
+<p><strong>Nota</strong>: si bien se lo menciona para dar un poco de contexto, las definiciones de objeto y método no pertenecen al alcance de este curso. Incluso nos es posible escribir los métodos sin invocar al objeto del que se desprenden, como en el siguiente ejemplo:</p>
+</blockquote>
+<h4 id="sintaxis-1"><strong>Sintaxis</strong></h4>
+<pre class="js"><code>alert(&quot;Esto es una alerta!&quot;);</code></pre>
+<p><strong>Ambas maneras son igual de validas, asi que de aquí en adelante vamos a seguir con esta segunda sintaxis</strong></p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNLRJpG" data-editable="true" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/WNLRJpG"> Untitled</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2 id="confirm-box">3.2 Confirm Box</h2>
+<p>Las confirm box (cajas de confirmación en español) son comúnmente usadas para que el usuario acepte o rechace algo. Cuando una Confirm Box se despliega, nuestro usuario debe clickear “Aceptar” o “Cancelar”.</p>
+<h4 id="sintaxis-2"><strong>Sintaxis</strong></h4>
+<pre class="js"><code>confirm(&quot;Texto a confirmar&quot;);</code></pre>
+<p>Al seleccionar la opción afirmativa, es retornado un valor True (Verdadero), y cuando se selecciona la opción negativa, es retornado False (Falso), con dichos valores podemos operar luego.</p>
+<h4 id="ejemplo"><strong>Ejemplo</strong></h4>
+<pre class="html"><code>&lt;script&gt;
+function miFuncion() {
+    var texto;
+    if (confirm(&quot;Presione un botón&quot;)) { 
+    //esta línea se podría interpretar como if (True)
+    texto = &quot;Presionaste Aceptar&quot;;
+    } else {
+    texto = &quot;Presionaste Cancelar&quot;;
+    }
+//Si chequeamos el valor de valor de nuestra variable texto, este seria diferente dependiendo de que haya presionado el usuario
+}
+&lt;/script&gt;</code></pre>
+<blockquote>
+<p><strong>Nota</strong>: la etiqueta script que se ve en el ejemplo de arriba es una etiqueta de HTML que sirve para que escribamos nuestro código JavaScript dentro, o bien nos sirve para linkear nuestro HTML a un documento js de forma análoga a como hacemos con nuestros CSS</p>
+</blockquote>
+<pre class="html"><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; </code></pre>
+<h2 id="prompt-box">3.3 Prompt Box</h2>
+<p>Una Prompt Box (la traducción literal no existe, pero podría verse como “Caja de entrada”) es utilizada cuando queremos que el usuario ingrese un valor. Tiene 2 parámetros: El mensaje que queremos que el usuario lea, que generalmente le da el contexto sobre lo que se busca introducir, y el texto por defecto que sale en el cuadro de entrada de texto. Cuando una Prompt Box aparece, el usuario tiene que introducir un valor que se le pide, y después hacer click en “Aceptar” o "Cancelar.</p>
+<h4 id="sintaxis-3"><strong>Sintaxis</strong></h4>
+<pre class="js"><code>prompt(&quot;Algún texto&quot;,&quot;Texto por defecto&quot;);</code></pre>
+<p>Si el usuario da click en “Aceptar”, la Prompt Box nos retorna el valor ingresado por el usuario, en cambio, si hizo click en “Cancelar”, nos retornara como valor un null (nulo).</p>
+<h4 id="ejemplo-1"><strong>Ejemplo</strong></h4>
+<pre class="js"><code>let persona = prompt(&quot;Por favor, introduzca su nombre&quot;, &quot;nombre&quot;);
+let texto;
+if (persona == null || persona == &quot;&quot;) {
+    texto = &quot;El usuario canceló el Prompt&quot;;
+} else {
+    texto = &quot;Hola &quot; + persona + &quot;! ¿Cómo estás hoy?&quot;;
+}</code></pre>
+<h3 id="saltos-de-línea">3.4 Saltos de línea</h3>
+<p>Si queremos mostrar saltos de línea dentro de nuestros popus, podemos hacerlo utilizando una barra invertida seguida de una letra n: <code>\n</code></p>
+<h4 id="ejemplo-2"><strong>Ejemplo</strong></h4>
+<pre class="js"><code>alert(&quot;Hola\n¿Cómo estás?&quot;);</code></pre>
+<p>Esto debería mostrar, en dos renglones diferentes:</p>
+<pre><code>Hola
+¿Cómo estás?</code></pre>
+</article>
+<footer class="flex flex-row justify-between p-4 border-t
+    border-stone-400"
+>
+    Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez
+</footer>
+</body>
+</html>
