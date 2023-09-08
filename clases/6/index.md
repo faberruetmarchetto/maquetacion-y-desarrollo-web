@@ -311,7 +311,7 @@ if (persona == null || persona == "") {
 }
 ```
 
-### 3.4 Saltos de línea
+## 3.4 Saltos de línea
 
 Si queremos mostrar saltos de línea dentro de nuestros popus, podemos hacerlo utilizando una barra invertida seguida de una letra n: ```\n```
 
