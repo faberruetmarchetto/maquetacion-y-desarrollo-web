@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../markdown.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <meta name="author" content="Maquetacion y Desarrollo Web I" />
+  <meta name="description" content="Clase 7" />
+  <title>Clase 7 - Maquetacion y Desarrollo Web I</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header style="display: flex; flex-direction: row; justify-content: between;
+    padding: 0.5em; border-bottom: solid 1px #a8a29e;"
+>
+    <div style="display: flex; flex-direction: column; gap: 0.5em; background-color: white;
+        opacity: 0.9;"
+    >
+        <span style="font-family: 'source code pro', monospace; color: #4f46e5;
+            font-size: 1.5rem; line-height: 2rem;"
+        >
+            .maquetacion-y-desarrollo-web{}
+        </span>
+        <span style="font-weight: 400;">
+            &rsaquo; <span style="font-weight: 600;">Clase 7</span>
+        </span>
+    </div>
+</header>
+<article>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">&rsaquo; Indice de contenidos</h2>
+<ul>
+<li><a href="#formularios">1. Formularios</a>
+<ul>
+<li><a href="#el-elemento-form">1.1 El elemento form</a></li>
+<li><a href="#enviando-un-formulario">1.2 Enviando un formulario</a></li>
+<li><a href="#request-http">1.3 Request HTTP</a></li>
+<li><a href="#despues-de-enviar-nuestro-formulario">1.4 Despues de enviar nuestro formulario</a></li>
+<li><a href="#algunas-buenas-practicas-y-cosas-a-tener-en-cuenta">1.5 Algunas buenas practicas y cosas a tener en cuenta</a>
+<ul>
+<li><a href="#radio-buttons">1.5.1 Radio Buttons</a></li>
+<li><a href="#checkboxes">1.5.2 Checkboxes</a></li>
+</ul></li>
+<li><a href="#labels-y-fieldsets">1.6 Labels y Fieldsets</a>
+<ul>
+<li><a href="#label">1.6.1 Label</a></li>
+<li><a href="#fieldset">1.6.2 Fieldset</a></li>
+</ul></li>
+<li><a href="#tipos-de-entradas-y-teclado-dinamico">1.7 Tipos de entradas y teclado dinamico</a></li>
+</ul></li>
+<li><a href="#ejemplo-formulario-de-login">2. Ejemplo: Formulario de Login</a></li>
+</ul>
+</nav>
+<h1 id="formularios">1. Formularios</h1>
+<p>La mayoria de los sitios web incluyen de una u otra manera a los formularios. Los mismos permiten a nuestros usuarios interactuar con nuestra página, validar la informacion que ingresaron, y enviar los datos a un servidor. En esta clase nos centraremos unicamente en lo que podemos hacer con HTML, sin necesidad de CSS o JavaScript, sin embargo, cabe mencionar que existe la posibilidad de desactivar estas validaciones HTML seteando el atributo <code>novalidate</code> en nuestro <code>&lt;form&gt;</code>, si lo que quisieramos es procesar los datos despues usando JavaScript, no es nuestro caso, pero existe la posibilidad de hacerlo.</p>
+<h2 id="el-elemento-form">1.1 El elemento form</h2>
+<p>El elemento html <code>&lt;form&gt;</code> es quien nos permite lograr esto, dentro de el encontramos todos los controles, sean interactivos o no, que componen a nuestros formularios.</p>
+<h2 id="enviando-un-formulario">1.2 Enviando un formulario</h2>
+<p>Los formularios son enviados cuando el usuario activa un <strong>botón de enviar</strong>, que se encuentra dentro del <code>&lt;form&gt;</code>. Para estos podemos usar tanto <code>&lt;input&gt;</code> como <code>&lt;button&gt;</code>. Usando <code>&lt;input&gt;</code>, el contenido del atributo <code>value</code> será el texto que se muestre en el botón. En cambio, si usamos <code>&lt;button&gt;</code>, el texto que se mostrará es el que escribamos entre las etiquetas de <code>&lt;button&gt;</code></p>
+<h4 id="ejemplo">Ejemplo</h4>
+<pre class="html"><code>&lt;input type=&quot;submit&quot; value=&quot;Enviar Formulario 1&quot;&gt;
+&lt;button type=&quot;submit&quot;&gt;Enviar Formulario 2&lt;/button&gt;</code></pre>
+<p><strong>Resultado</strong></p>
+<p><input type="submit" value="Enviar Formulario 1"> <button type="submit">Enviar Formulario 2</button></p>
+<h2 id="request-http">1.3 Request HTTP</h2>
+<p>Para un formulario simple, todo lo que necesitamos es nuestro elemento <code>&lt;form&gt;</code> y un par de entradas en su interior, junto con un botón de enviar. Sin embargo, hay mucho mas que podemos hacer mas alla de esto. Los atributos de nuestro <code>&lt;form&gt;</code> setean <strong>Requests de HTTP</strong> (<strong>HyperText Transfer Protocol</strong>, protocolo de comunicación que permite las transferencias de información a través de archivos (<strong>HTML</strong>… entre otros), y es mediante estos requests que los datos ingresados en nuestro formulario son enviados, por ejemplo, hacia otra página. Dichos atributos a los que nos referimos son <code>action</code> y <code>method</code>. El primero, <code>action</code>, define la URL que procesa los datos del formulario. De no modificarlo, por defecto los datos del formulario son enviados dentro de la misma página en la que nos encontramos. El segundo, <code>method</code>, define cual es el metodo HTTP utilizado por el Request para enviar dichos datos. Generalmente se utilizan <code>GET</code> y <code>POST</code>. Con <code>GET</code> los datos son enviados como Strings con un formato <code>name=value</code>, los cuales son concatenados a la URL definida por <code>action</code>. En cambio, con <code>POST</code> los datos se envian con el cuerpo de nuestro request HTTP. Cuando enviamos datos que requieren de cierta seguridad, como contraseñas, <strong>siempre debemos usar</strong> <code>POST</code>. Existen otros metodos HTTP, pero para el contexto y alcance de este curso no serán necesarios.</p>
+<h2 id="despues-de-enviar-nuestro-formulario">1.4 Despues de enviar nuestro formulario</h2>
+<p>Cuando el usuario completa el formulario y lo envia, los nombres y valores de los campos relevantes de dicho formulario son enviados en un formato de pares nombre/valor. Estos campos relevanters son todos los que posean un atributo <code>name</code>, cuyo valor sera el nombre del par. El valor del par, en cambio, dependerá de donde provengan los datos: puede ser tanto el contenido de un atributo <code>value</code>, o un valor que haya ingresado el usuario, o un valor que haya elegido el mismo dentro de una serie de opciones. Tomemos este ultimo caso como ejemplo:</p>
+<h4 id="ejemplo-1">Ejemplo</h4>
+<pre class="html"><code>&lt;form method=&quot;GET&quot;&gt;
+    &lt;label for=&quot;jugador&quot;&gt;Elegí un jugador:&lt;/label&gt;
+    &lt;select name=&quot;jugador&quot; id=&quot;jugador&quot;&gt;
+        &lt;option value=&quot;messi&quot;&gt;Lionel Messi&lt;/option&gt;
+        &lt;option&gt;Ronaldinho Gaucho&lt;/option&gt;
+        &lt;option value=&quot;cristiano&quot;&gt;Cristiano Ronaldo&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot;&gt;
+&lt;/form&gt;</code></pre>
+<p><strong>Resultado</strong></p>
+<form method="GET">
+<label for="jugador">Elegí un jugador:</label> <select name="jugador" id="jugador"> <option value="messi">Lionel Messi</option> <option>Ronaldinho Gaucho</option> <option value="cristiano">Cristiano Ronaldo</option> </select> <input type="submit" value="Enviar">
+</form>
+<p>En este caso, el valor de un <code>&lt;select&gt;</code> será el atributo <code>value</code> del <code>&lt;option&gt;</code> elegido por el usuario, o, como se ve en el caso del segundo <code>&lt;option&gt;</code>, el de Ronaldinho, el cual no posee dicho atributo, el valor será el texto que contiene <code>&lt;option&gt;</code> adentro. Elegir “Lionel Messi” (o no elegir nada, ya que por defecto se elije la primer opcion mostrada si no se selecciona ninguna otra), y hacer click en el botón de enviar va a provocar que se recargue la página seteando la URL como:</p>
+<pre><code>https://url.de.tu.pagina?jugador=messi</code></pre>
+<p>En el caso de Elegir “Ronaldinho Gaucho”, dado que como mencionamos antes dicho <code>&lt;option&gt;</code> no posee <code>value</code>, nuestra URL se seteara como:</p>
+<pre><code>https://url.de.tu.pagina?jugador=Ronaldinho+Gaucho</code></pre>
+<p>Una vez enviado el formulario, la informacion enviada incluye, como ya se menciono, todos los nombres y valores de todos los datos relevantes que posean un <code>name</code>, excepto los checkboxes no seleccionados, los bottones radio no seleccionados, y los nombres y valores de cualquier otro botón que no sea el que envió dicho formulario. Para el resto de campos relevantes, si poseen <code>name</code> pero ningun valor fue ingresado o está ahi por defecto, dicho <code>name</code> es enviado con valor vacio.</p>
+<h2 id="algunas-buenas-practicas-y-cosas-a-tener-en-cuenta">1.5 Algunas buenas practicas y cosas a tener en cuenta</h2>
+<p>Existen en total 22 tipos de entradas, no vamos a verlos todos, pero cabe resaltar que incluir un valor es opcional, y usualmente, <strong>una mala idea</strong>, cuando lo que buscamos es que el ususario ingrese información. Sin embargo, como vimos arriba, para los elementos <code>&lt;input&gt;</code>, en los cuales el usuario no puede editar los valores, <strong>siempre deberiamos incluirlos nosotros</strong>. Esto tambien aplica a otras entradas como: <code>hidden</code>, <code>radio</code>, <code>checkbox</code>, <code>submit</code>, <code>button</code> y <code>reset</code>. Usar <code>name</code> unicos para cada dato relevante hace que el procesamiento del lado del servidor sea mas simple, y es recomendable hacerlo, con las <code>checkbox</code> y los botones <code>radio</code> siendo las excepciones a esta regla.</p>
+<h3 id="radio-buttons">1.5.1 Radio Buttons</h3>
+<p>Para los botones de tipo radio, esto se debe a que dentro de un grupo de botones radio, todos deben tener el mismo atributo <code>name</code> para que se cree el efecto de que solo uno puede ser elegido a la vez. En este caso, el <code>name</code> unico pertenecerá a todo el grupo de botones radio y su funcion será distinguir a dicho grupo de otros grupos de botones que podamos tener. Lo que si debemos tener en cuenta es de que cada botón de nuestro grupo posea un <code>value</code> unico que lo diferencie de los demas del grupo. Solo el valor del atributo <code>value</code> del botón seleccionado es enviado con nuestro request.</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjBQJEv" data-user="web-dot-dev" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/web-dot-dev/pen/JjBQJEv"> Radio controls</a> by web.dev (<a href="https://codepen.io/web-dot-dev"><span class="citation" data-cites="web-dot-dev">@web-dot-dev</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h3 id="checkboxes">1.5.2 Checkboxes</h3>
+<p>Es una opcion valida tener checkboxes pertenecientes a un mismo grupo teniendo el mismo <code>name</code>. Solamente las checkbox seleccionadas van a enviar su <code>name</code> y su <code>value</code> con el formulario. Si tenemos varias seleccionadas y todas tienen el mismo nombre, dicho nombre va a ser enviado con (esperemos) valores distintos. Si tenemos diferentes entradas relevantes con un mismo nombre, incluso si no todas son checkboxes, <strong>todas</strong> van a ser enviadas, separadas por <code>&amp;</code>. Si no le incluimos un <code>value</code> a un checkbox, el valor del checkbox seleccionado por defecto es <code>on</code>, lo que probablemente no nos sea muy util.</p>
+<h4 id="ejemplo-2">Ejemplo</h4>
+<p>Con 3 checkboxes, todas llamadas <code>chk</code> y todas seleccionadas, obtendriamos algo como esto:</p>
+<pre class="html"><code>https://url.de.tu.pagina?chk=on&amp;chk=on&amp;chk=on</code></pre>
+<p>No muy entendible que digamos, ni siquiera podemos diferenciar cual checkbox es cual. Para volver un checkbox requerido, le podemos agregar el atributo <code>required</code>. Siempre debemos informarle al usuario cuando un checkbox debe ser marcado, o cuando cualquier otro campo es requerido. Tener en cuenta que <code>required</code> solo vuelve requerida a la checkbox a la que lo agregamos, pero no influye al resto con el mismo nombre.</p>
+<h2 id="labels-y-fieldsets">1.6 Labels y Fieldsets</h2>
+<p>Para que nuestros usuarios sepan como llenar un formulario, dicho formulario debe ser accesible. Cada estructura relevante edbe tener una etiqueta, tambien queremos que los grupos de elementos las tengan. Para entradas individuales usamos <code>&lt;label&gt;</code>, mientras que para los grupos sus elementos son etiquetados con el contenido del <code>&lt;legend&gt;</code> perteneciente al <code>&lt;fieldset&gt;</code> que los agrupa.</p>
+<h3 id="label">1.6.1 Label</h3>
+<p>Si volvemos a ver los ejemplos anteriores, vamos a ver que todos los inputs de datos tenian su <code>&lt;label&gt;</code>, exceptuando los botones de enviar. <code>&lt;label&gt;</code> nos permite etiquetar las estructuras de nuestro <code>&lt;form&gt;</code> con nombres accesibles. Para los botones de enviar, su nombre accesible proviene de su contenido o valor, segun el caso de boton, para todo el resto de tipos de entrada en nuestro formulario, todos requiren tener su <code>&lt;label&gt;</code>. Si no etiquetamos nuestras entradas, el buscador va a mostrarlas de igual forma, pero el usuario no va a saber que debe ingresar o hacer con ellas. Para asociar explicitamente una estructura con un <code>&lt;label&gt;</code> debemos incluir el atributo <code>for</code> en la etiqueta con su valor siendo el <code>id</code> de la estructura con la que la estamos asociando.</p>
+<h4 id="ejemplo-3">Ejemplo</h4>
+<pre class="html"><code>&lt;label for=&quot;nombre_completo&quot;&gt;Ingresa tu nombre&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;nombre_completo&quot; name=&quot;nombre&quot;&gt;</code></pre>
+<p><strong>Resultado</strong></p>
+<p><label for="nombre_completo">Ingresa tu nombre</label><input type="text" id="nombre_completo" name="nombre"></p>
+<p>No es recomendable agregar elementos interactivos en nuestras etiquetas, ya que eso podria confundir a los usuarios. Generalmente se acostumbra a colocar los <code>&lt;label&gt;</code> antes de la estructura correspondiente, excepto en los casos de los botones radio y los checkboxes. No es obligatorio hacerlo, pero es algo que ya esta bastante extendido.</p>
+<h3 id="fieldset">1.6.2 Fieldset</h3>
+<p>Etiquetar nos provee el nombre reconocible para el elemento con el cual esta asociada la etiqueta. En los grupos de elementos es necesario etiquetar a cada uno de los miembros del grupo, y ademas, al grupo en si. Para etiquetar al grupo, agrupamos todos sus elementos dentro de un <code>&lt;fieldset&gt;</code>, el cual tendra un <code>&lt;legend&gt;</code> encargado de asignarle la etiqueta.</p>
+<h4 id="ejemplo-4">Ejemplo</h4>
+<pre class="html"><code>&lt;fieldset&gt;
+&lt;legend&gt;Who is your favorite student?&lt;/legend&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;radio&quot; value=&quot;blendan&quot; name=&quot;machine&quot;&gt; Blendan Smooth
+            &lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;radio&quot; value=&quot;hoover&quot; name=&quot;machine&quot;&gt; Hoover Sukhdeep
+            &lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;radio&quot; value=&quot;toasty&quot; name=&quot;machine&quot;&gt; Toasty McToastface
+            &lt;/label&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/fieldset&gt;</code></pre>
+<p><strong>Resultado</strong></p>
+<fieldset>
+<legend>Who is your favorite student?</legend>
+<ul>
+<li>
+<label> <input type="radio" value="blendan" name="machine"> Blendan Smooth </label>
+</li>
+<li>
+<label> <input type="radio" value="hoover" name="machine"> Hoover Sukhdeep </label>
+</li>
+<li>
+<label> <input type="radio" value="toasty" name="machine"> Toasty McToastface </label>
+</li>
+</ul>
+</fieldset>
+<p>En este ejemplo, los <code>&lt;label&gt;</code> implicitos cada uno etiqueta a un boton radio y <code>&lt;legend&gt;</code> etiqueta al grupo de botones radio. Anidar un <code>fieldset</code> dentro de otro <code>fieldset</code> es una practica estandar, por ejemplo, si buscaramos dividir un formulario con preguntas en varios grupos de preguntas distintos segun el tema, podriamos tener un <code>fieldset</code> cuyo <code>legend</code> sea “Preguntas sobre futbol” y despues otro ``fieldset<code>adentro cuyo</code>legend``` fuera “¿Quien es tu jugador favorito?”</p>
+<pre class="html"><code>&lt;fieldset&gt;
+&lt;legend&gt;Preguntas sobre futbol:&lt;/legend&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;fieldset&gt;
+            &lt;legend&gt;¿Quien es tu jugador favorito?&lt;/legend&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+            &lt;!-- resto del codigo --&gt;</code></pre>
+<fieldset>
+<legend>Preguntas sobre futbol:</legend>
+<ul>
+<li>
+<fieldset>
+<legend>¿Quien es tu jugador favorito?</legend>
+<ul>
+<li>
+</li>
+</ul>
+</fieldset>
+</li>
+</ul>
+</fieldset>
+<p>Cabe destacar que tanto <code>&lt;legend&gt;</code> como <code>&lt;fieldset&gt;</code> pueden ser estilados con el uso de CSS</p>
+<h2 id="tipos-de-entradas-y-teclado-dinamico">1.7 Tipos de entradas y teclado dinamico</h2>
+<p>Como mencionamos, hay 22 tipos distintos de entradas de datos. En ciertos casos, si el usuario esta en un dispositivo como un celular, el teclado solo aparece cuando es necesario, por ejemplo, cuando el usuario toca la casilla “Usuario” y el teclado aparece para permitirle escribir en dicho campo. Para estos casos, el tipo de entrada determina el tipo de teclado mostrado, y es algo que podemos optimizar. Por ejemplo, un <code>&lt;input type="tel"&gt;</code> muestra el teclado optimizado para ingresar un numero telefonico, mostrando unicamente numeros y caracteres relacionados, en cambio <code>type =email</code> incluye tanto el <code>@</code> como <code>.</code>, etc. El teclado que se despliegue, ademas de segun el tipo de entrada, tambien variara segun el dispositivo, el ejemplo mas sencillo es que no es igual en Android o en iPhone.</p>
+<h1 id="ejemplo-formulario-de-login">2. Ejemplo: Formulario de Login</h1>
+<p>Ya vistos los conceptos sobre formularios, pasaremos al ejemplo practico de un formulario de Login (inicio de sesion). En este formulario el usuario debera ingresar su email y su contraseña para ingresar a un determinado sitio web.</p>
+<p>La estructura HTML de un formulario de login es:</p>
+<pre class="html"><code>&lt;form&gt;
+    &lt;label for=&quot;email&quot;&gt;Ingrese su email:&lt;/label&gt;
+    &lt;input id=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+    &lt;label for=&quot;password&quot;&gt;Ingrese su contraseña:&lt;/label&gt;
+    &lt;input id=&quot;password&quot; type=&quot;password&quot;
+        placeholder=&quot;Contraseña&quot;
+    /&gt;
+  &lt;button type=&quot;submit&quot;&gt;
+    Login
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWZKbRr" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/MWZKbRr"> Login</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>Ahora empezamos a agregar CSS. En primer lugar, haremos una clase <code>login-form</code> para nuestro elemento <code>form</code>.</p>
+<pre class="css"><code>.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  gap: 0.5em;
+  font-family: sans-serif;
+  border: solid 1px #d4d4d4;
+  padding: 2.5em;
+  border-radius: 0.5em;
+  box-shadow: #e5e5e5 0px 1px 4px;
+}</code></pre>
+<p>Es un contenedor con display flex, en dirección column. Le pusimos un ancho determinado y aprovechamos para elegir el font-family (que se aplicará a todos los elementos del contenedor). También agregamos border-radius (para redondear bordes) y le pusimos box-shadow para que tenga sombra en los bordes.</p>
+<p>Pueden encontrar efectos de sombra en <a href="https://getcssscan.com/css-box-shadow-examples">esta página</a>.</p>
+<p>Ahora vamos con los <code>label</code>.</p>
+<pre class="css"><code>.login-label {
+  color: #292524;
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+}</code></pre>
+<p>En este caso le pusimos un color de texto diferente y le asignamos un tamaño menor al resto del texto. También le agregamos un <code>margin-top</code> para que estén un poco más separados entre sí.</p>
+<p>En cuanto a los estilos de los inputs hicimos lo siguiente:</p>
+<pre class="css"><code>.login-input {
+  padding: 0.75em;
+  border-radius: 0.25em;
+  border: solid 1px #d4d4d4;
+}</code></pre>
+<p>Es decir, un poco de padding, border-radius y un borde de color gris.</p>
+<p>Finalmente, para el boton de login:</p>
+<pre class="css"><code>.login-button {
+  margin-top: 1em;
+  padding: 0.6em 0.5em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #2563eb;
+  color: #eff6ff;
+  font-weight: 600;
+  transition: ease-in-out 0.2s;
+}
+
+.login-button:hover {
+  background-color: #3b82f6;
+  cursor: pointer;
+}</code></pre>
+<p>Agregamos padding (distinto en vertical que en horizontal), <code>margin-top</code> para que se aleje más del resto del formulario. Le quitamos el borde, agregamos un color de fondo y una transición para cuando se haga hover sobre el mismo se vea un efecto de cambio de color de fondo.</p>
+<p>A continuación el resultado final:</p>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ZEVXzJe" data-user="Ignacio-Martin-Citate-G-mez" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<span>See the Pen <a href="https://codepen.io/Ignacio-Martin-Citate-G-mez/pen/ZEVXzJe"> Login with styles</a> by Ignacio Martin Citate Gómez (<a href="https://codepen.io/Ignacio-Martin-Citate-G-mez"><span class="citation" data-cites="Ignacio-Martin-Citate-G-mez">@Ignacio-Martin-Citate-G-mez</span></a>) on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</article>
+<footer class="flex flex-row justify-between p-4 border-t
+    border-stone-400"
+>
+    Facundo Santa Cruz Merad, Francisco A. Berruet Marchetto, Ignacio M. Citate Gomez
+</footer>
+</body>
+</html>
